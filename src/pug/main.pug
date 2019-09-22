@@ -1,138 +1,81 @@
 include includes/mixins.pug
 doctype html
 <html lang="en">
-
 include includes/head.pug
-
-body.body.body--main
-  include includes/aside.pug
-  include includes/callback.pug
-  .wrapper#panel
+body.body
     include includes/header.pug
     main.main
-      section.section.section--main
-        video.main__video(poster="img/preview.png" id="bgvid" playsinline autoplay muted loop)
-          source(src="img/video.mp4" type="video/mp4")
-        .container(data-test)
-          .page
-            h1.page__title.page__title--nomb.page__title--big Производство  упаковки из <wbr>полиэтилена 
-              .animated
-                ul.animated__list
-                  li.animated__item за 24 часа
-                  li.animated__item в Петербурге
-                  li.animated__item любого объема
-                  li.animated__item в Петербурге
-            .page__types.types
-              .types__item
-                .types__title Упаковочные мешки
-                img.types__img(src='./img/category-1.png')
-              .types__item
-                .types__title Полиэтиленовая плёнка
-                img.types__img(src='./img/category-2.png')
-      section.section.section--calc
+      section.section.section--karton
+        .karton
+          h1.karton__title
+          button.karton__btn.btn.btn--yellow Рассчитать стоимость
+      
+      section.section.section--slider
         .container
-          .section__row.section__row--reverse
-            .section__part
-              h2.section__title.section__title--white.section__title--left Рассчитайте стоимость вашего заказа
-              p.section__text.section__text--white.section__text--line У нас нет прайса, потому что мы работаем на заказ, делая именно ту упаковку, которая нужна каждому из наших клиентов
-            .section__part.calc
-              .calc__fields
-                .calc__field.input-group
-                  label.input-group__label Вид продукции: 
-                  .select
-                    input.select__input.select__input--group(name='type' type='hidden')
-                    .select__placeholder Полиэтиленовая пленка
-                    .select__items
-                      .select__item(data-text='Полиэтиленовая пленка' data-value='Полиэтиленовая пленка' data-param='1') Полиэтиленовая пленка
-                      .select__item(data-text='Мешки, пакеты' data-value='Мешки, пакеты' data-param='2') Мешки, пакеты
-                .calc__group.calc__group--active(data-group='1')
-                  .calc__field.input-group
-                    label.input-group__label Вид пленки: 
-                    .select
-                      input.select__input.select__input--dep(name='type' type='hidden' data-dep='1')
-                      .select__placeholder Упаковочная пленка
-                      .select__items
-                        .select__item(data-text='Упаковочная пленка, ПВД' data-value='Упаковочная пленка, ПВД') Упаковочная пленка, ПВД
-                        .select__item(data-text='Упаковочная пленка, ПНД' data-value='Упаковочная пленка, ПНД') Упаковочная пленка, ПНД
-                        .select__item(data-text='Термоусадочная пленка' data-value='Термоусадочная пленка') Термоусадочная пленка
-                        .select__item(data-text='Пленка с флексопечатью' data-value='Пленка с флексопечатью' data-param='true') Пленка с флексопечатью
-                  .calc__field.calc__field--dep.calc__field--hide.input-group(data-dep='1')
-                    label.input-group__label Количество цветов: 
-                    +radio('name','1','2','3','4')
-                .calc__group(data-group='2')
-                  .calc__field.input-group(data-parent="group")
-                    label.input-group__label Вид материала: 
-                    +select('name','В рулоне с перфорацией','В пластах')
-                  .calc__field.calc__field--75.input-group
-                    label.input-group__label Вид материала: 
-                    +select('name','ПВД','ПНД')
-                .calc__field.input-group.input-group--start
-                  label.input-group__label Объем, Ширина, Толщина: 
-                  .input-group__group
-                    .input-group__box
-                      input.input-group__input.im--number
-                      .input-group__desc кг
-                    .input-group__box
-                      input.input-group__input.im--number(data-min='50' data-max='17000')
-                      .input-group__desc мм
-                    .input-group__box
-                      input.input-group__input.im--number(data-min='0.2' data-max='6')
-                      .input-group__desc мм
-              .calc__fields.calc__fields--info
-                .calc__field.input-group
-                  input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
-                  input.input-group__input.im--phone.input-group__input--phone(name="phone" placeholder="Телефон")
-                .calc__field.input-group
-                  textarea.input-group__input.input-group__input--text(name="comment" placeholder="Комментарий" rows=3)
-              .calc__buttons
-                a.calc__btn.btn.btn--orange Рассчитать
-                p.calc__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с 
-                  a.link.link--light(href='#') политикой конфиденциальности 
-
+          .slider
+            .slider__item
+              .slider__desc
+                h2.section__subtitle Упаковка из картона
+                p.section__text Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.
+              .slider__img
+                img.img.img--responsive(src="#")
+              
+      section.section.section--consult
+        .container
+          .consult
+            .consult__title Консультации
+            .consult__text Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки
+      section.section.section--promo
+        .container
+          .promo
+            span Более 10 лет
+            | на рынке производства гофрокартона
       section.section.section--advantages
         .container
           .advantages
-            .advantages__item.advantages__item
-              .advantages__title.advantages__title--fast
-                | Сделаем быстро
-              .advantages__text
-                | Изготовим заказ точно в срок. Возможно срочное производство за 24 часа
-            .advantages__item.advantages__item
-              .advantages__title.advantages__title--rst
-                | Работаем по ГОСТу
-              .advantages__text
-                | Изготовим Ваш заказ с соблюдением ГОСТ 10354-82, ГОСТ 32521-2013
-
-
-
-            .advantages__item.advantages__item
-              .advantages__title.advantages__title--truck
-                | Доставим бесплатно
-              .advantages__text
-                | Доставка заказов любого объема по Санкт-Петебургу и Ленинградской области бесплатна
-            .advantages__item.advantages__item
-              .advantages__title.advantages__title--stars
-                | Заботимся о качестве
-              .advantages__text
-                | Вся продукция производится на современном оборудовании и имеет необходимые сертификаты
-          a.btn.btn--orange(data-event="popup" data-popup="callback" data-title="Консультация специалиста" data-btn="Заказать") Заказать консультацию
-      section.section.section--news.section--white
+            .advantages__item
+              .advantages__title более 40 фур
+              .advantages__desc отгружаем готовой продукции в месяц
+            .advantages__item
+              .advantages__title свыше 250 млн
+              .advantages__desc изготовлено коробок из картона за 10 лет
+            .advantages__item
+              .advantages__title 28 единиц
+              .advantages__desc современного оборудования
+            .advantages__item
+              .advantages__title 56
+              .advantages__desc опытных сотрудников
+            .advantages__item
+              .advantages__title 2000 м2
+              .advantages__desc площадь производства
+            .advantages__item
+              .advantages__title 3000 м2
+              .advantages__desc площадь склада
+      section.section.section--clients
         .container
-          h2.section__title.section__title--center Последние новости
+          h2.section__title Наши клиенты
+          .clients
+            .clients__item
+              img.img.img--responsove(src="#")
+            .clients__item
+              img.img.img--responsove(src="#")
+            .clients__item
+              img.img.img--responsove(src="#")
+            .clients__item
+              img.img.img--responsove(src="#")
+            .clients__item
+              img.img.img--responsove(src="#")
+            .clients__item
+              img.img.img--responsove(src="#")
 
-          .news
-            .news__items
-              each val in ['Новость 1', 'Новость 2', 'Новость 3']
-                news.news__item.news
-                  img.news__img(src='./img/article.png')
-                  .news__desc
-                    .news__title= val
-                    .news__text "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque …
-            a.news__link.link.link--orange(href='#') Перейти в архив новостей
-
+      section.section.secion--form
+        .container
+          .form
+            h2.section__title Остались вопросы?
+            p.form__text Мы с радостью поможем разобраться
+            .form__wrapper
+              input.form__input(placeholder="Телефон или e-mail")
+              button.form__button.btn.btn--yellow Позвоните мне
 
     include includes/footer.pug
-  
-  
-
 </html>

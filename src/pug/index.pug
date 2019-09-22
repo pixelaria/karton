@@ -1,31 +1,11 @@
 include includes/mixins.pug
 doctype html
 html(lang="ru")
-
-  include includes/head.pug
-
   body
-    include includes/aside.pug
-    .wrapper#panel
-      main.main
-        section.section.section
-          .container
-            ul.list
-              li.list__item
-                a.list__link(href="main.html") Главная
-              li.list__item
-                a.list__link(href="category.html") Категория
-              li.list__item
-                a.list__link(href="product.html") Страница товара
-              li.list__item
-                a.list__link(href="news.html") Новости
-              li.list__item
-                a.list__link(href="article.html") Конкретная новость
-              li.list__item
-                a.list__link(href="about.html") О компании
-              li.list__item
-                a.list__link(href="contacts.html") Контакты
-              li.list__item
-                a.list__link(href="terms.html") Условия сотрудничества
-              li.list__item
-                a.list__link(href="404.html") 404
+    main.main
+      section.section.section--index
+        .container
+          ul.list-index
+            li.list-index__item
+              a.list-index__link(href="main.html") Главная
+              
