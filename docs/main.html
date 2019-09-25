@@ -10,26 +10,29 @@
 </head>
 <body class="body">
   <header class="header">
-    <div class="container header__container"><a class="header__item header__item--logo" href="/">Картонный дом</a>
+    <div class="container header__container"><a class="header__item header__item--logo logo" href="/">Картонный дом</a>
       <nav class="header___item header__item--nav nav">
         <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link">О компании</a></li>
-          <li class="nav__item"><a class="nav__link">Продукция</a></li>
-          <li class="nav__item"><a class="nav__link">Услуги</a></li>
-          <li class="nav__item"><a class="nav__link">Контакты</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">О компании</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Продукция</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Услуги</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
         </ul>
       </nav>
-      <div class="header__item header__item--info"><a class="header__phone" href="tel:+78124616466">8 (812) 461-64-66</a><a class="header__callback callback" id="callback">Обратный звонок</a></div>
+      <div class="header__item header__item--info"><a class="header__phone link link--phone" href="tel:+78124616466">8 (812) 461-64-66</a><a class="header__callback link link--callback" id="callback">Обратный звонок</a></div>
     </div>
   </header>
   <main class="main">
     <section class="section section--karton">
-      <div class="karton">
-        <h1 class="karton__title"></h1>
-        <button class="karton__btn btn btn--yellow">Рассчитать стоимость</button>
+      <div class="container">
+        <div class="box box--white"></div>
+        <div class="karton">
+          <h1 class="karton__title">Упаковка <br/> из картона</h1>
+          <button class="karton__btn btn btn--yellow">Рассчитать стоимость</button>
+        </div>
       </div>
     </section>
-    <section class="section section--slider">
+    <section class="section section--slider section--gray">
       <div class="container">
         <div class="slider">
           <div class="slider__items">
@@ -38,7 +41,7 @@
                 <h2 class="section__subtitle">Упаковка из картона</h2>
                 <p class="section__text">Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.</p>
               </div>
-              <div class="slider__img"><img class="img img--responsive" src="#"></div>
+              <div class="slider__img"><img class="img img--responsive" src="../img/box-black.png"></div>
             </div>
             <div class="slider__nav">
               <div class="slider__arrow slider__arrow--prev"></div>
@@ -49,10 +52,12 @@
       </div>
     </section>
     <section class="section section--consult">
-      <div class="container">
-        <div class="consult">
-          <div class="consult__title">Консультации</div>
-          <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
+      <div class="section__inner">
+        <div class="container">
+          <div class="consult">
+            <h2 class="section__subtitle consult__title">Консультации</h2>
+            <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
+          </div>
         </div>
       </div>
     </section>
@@ -65,7 +70,7 @@
       <div class="container">
         <div class="advantages">
           <div class="advantages__item">
-            <div class="advantages__title">более 40 фур</div>
+            <div class="advantages__title">более <br/> 40 фур</div>
             <div class="advantages__desc">отгружаем готовой продукции в месяц</div>
           </div>
           <div class="advantages__item">
@@ -91,17 +96,10 @@
         </div>
       </div>
     </section>
-    <section class="section section--clients">
+    <section class="section section--clients section--gray">
       <div class="container">
         <h2 class="section__title">Наши клиенты</h2>
-        <div class="clients">
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-          <div class="clients__item"><img class="img img--responsove" src="#"></div>
-        </div>
+        <div class="clients"><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-1.png"></a><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-2.png"></a><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-3.png"></a><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-4.png"></a><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-5.png"></a><a class="clients__item" hre="#"><img class="img img--responsove" src="../img/client-6.png"></a></div>
       </div>
     </section>
     <section class="section secion--form">
@@ -142,6 +140,7 @@
           </ul>
         </div>
         <div class="footer__item footer__item--contacts">
+          <div class="footer__title">Связаться с нами</div>
           <ul class="footer__list list">
             <li class="list__item">Тел: 8 (812) 461-64-66</li>
             <li class="list__item">Факс: 8 (812) 461-64-62</li>
