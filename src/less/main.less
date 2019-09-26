@@ -44,6 +44,13 @@ body {
   &--phone {
     padding: 0 25px;
   }
+
+  &--blue {
+    color: @color-blue;
+    &:hover {
+      color: darken(@color-blue,15%);
+    }
+  }
 }
 
 .btn {
@@ -59,13 +66,14 @@ body {
   border: none;
   cursor: pointer;
 
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &--yellow {
     background-color: @color-yellow;
 
     &:hover {
       background-color: lighten(@color-yellow,15%);
+      box-shadow: none;
     }
   }
 }
@@ -163,7 +171,7 @@ body {
   }
 
   &--promo {
-    padding: 150px 0;
+    padding: 250px 0;
     background-color: transparent;
     background-image: url('../img/manufacturing.png');
     background-position: center;
@@ -172,12 +180,14 @@ body {
   }
 
   &--advantages {
-    padding: 150px 0;
-    background-color: transparent;
-    background-image: url('../img/box-tower.png');
-    background-position: right;
-    background-size: 100% auto;
-    background-repeat: no-repeat; 
+    padding: 170px 0;
+    .section__inner {
+      background-color: transparent;
+      background-image: url('../img/box-tower.png');
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat; 
+    }
   }
 
   &--consult {
@@ -195,11 +205,18 @@ body {
 }
 
 .karton {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  
+  z-index: 1;
+  
   &__title {
     margin-top: 0;
     margin-bottom: 38px;
 
-    font-size: 110px;
+    font-size: 100px;
     font-weight: 700;
     line-height: 110px;
     letter-spacing: 3px;
@@ -232,12 +249,17 @@ body {
 .advantages {
   display: flex;
   flex-wrap: wrap;
-  max-width: 90%;
+  justify-content: space-between;
+  max-width: 80%;
 
   &__item {
     width: 50%;
     padding: 85px 0;
     max-width: 350px;
+
+    &:nth-child(4n+1) {
+      margin-left: 90px;
+    }
   }
   &__title {
     font-size: 82px;
@@ -258,9 +280,43 @@ body {
 
   }
 
-  &__item {
+  &__container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+  &__desc {
+    flex-basis: 50%;
+  }
+  &__nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    background-color: @color-white;
+
+    display: flex;
+  }
+
+  &__arrow {
+    width: 150px;
+    height: 140px;
+
+    background-position: center;
+    background-size: 45px auto;
+    background-repeat: no-repeat;
+    background-image: url('../img/icon-arrow.png');
+    
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: @box-shadow;
+    }
+
+    &--prev {
+      transform: rotateY(180deg);
+
+    }
   }
 }
 
