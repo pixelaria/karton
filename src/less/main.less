@@ -308,9 +308,11 @@ body {
     background-image: url('../img/icon-arrow.png');
     
     cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
     &:hover {
       box-shadow: @box-shadow;
+      background-color: @color-yellow;
     }
 
     &--prev {
@@ -326,6 +328,29 @@ body {
   width: 50%;
   margin-left: auto;
   max-width: 300px;
+
+  &__items {
+    height: 200px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -4px;
+  }
+
+  &__part {
+    height: 3px;
+    width: 100%;
+    margin: 0 4px;
+    background-color: @color-gray;
+    cursor: pointer;
+    
+    transition: background-color 0.3s ease-in-out;
+    
+    &:hover, &--active {
+      background-color: @color-blue;      
+    }
+  }
 }
 
 /* clients */
