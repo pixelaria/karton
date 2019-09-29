@@ -2,11 +2,11 @@ header.header
   .container.header__container
     a.header__item.header__item--logo.logo(href="/") Картонный дом
     nav.header___item.header__item--nav.nav
-      .nav__toggler.toggler
+      .nav__toggler.toggler#nav-toggler(data-target="nav")
         span.toggler__bar
         span.toggler__bar
         span.toggler__bar
-      ul.nav__list
+      ul.nav__list#nav
         li.nav__item
           a.nav__link(href="#") О компании
         li.nav__item
@@ -15,7 +15,7 @@ header.header
           a.nav__link(href="#") Услуги
         li.nav__item
           a.nav__link(href="#") Контакты
-
-    .header__item.header__item--info
-      a.header__phone.link.link--phone(href="tel:+78124616466") 8 (812) 461-64-66
-      a.header__callback.link.link--callback#callback Обратный звонок
+        li.nav__item
+          a.header__phone.link.link--phone(href="tel:+78124616466") 8 (812) 461-64-66
+        li.nav__item
+          a.header__callback.link.link--callback#callback Обратный звонок
