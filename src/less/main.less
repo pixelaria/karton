@@ -197,16 +197,19 @@ body {
 .section {
   position: relative;
   
-  padding: 100px 0;
-  
+  padding: 90px 0;
+
   @media @desktop {
     padding: 100px 0;
   }
 
   &__title {
-    font-size: 82px;
+    font-size: 28px;
     font-weight: 300;
-    line-height: 110px;
+    
+    @media @desktop {
+      font-size: 82px;
+    }
   }
 
   &__subtitle {
@@ -224,9 +227,15 @@ body {
   }
 
   &--karton {
+    background-image: url('../img/box-white.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
     @media @desktop {
       height: 100%;
-      
+      background: none;
+
       &:after {
         content:'';
         display: block;
@@ -265,9 +274,13 @@ body {
     .section__inner {
       background-color: transparent;
       background-image: url('../img/box-tower.png');
-      background-position: right;
+      background-position: 150px 0;
       background-size: contain;
       background-repeat: no-repeat; 
+
+      @media @desktop {
+        background-position: right;  
+      }
     }
 
     @media @desktop {
@@ -276,15 +289,25 @@ body {
   }
 
   &--consult {
+    padding: 90px 0px;
     
-    padding: 150px 0;
     .section__inner {
-      padding: 200px 0;
+      
       background-color: transparent;
       background-image: url('../img/box-hand.png');
-      background-position: left;
+      background-position: left bottom;
       background-repeat: no-repeat; 
-      background-size: contain;
+      background-size: 300px;
+      padding-bottom: 260px;
+
+      @media @desktop {
+        padding: 200px 0;
+        background-size: contain;
+      }
+    }
+
+    @media @desktop {
+      padding: 150px 0;
     }
   }
 }
@@ -358,6 +381,10 @@ body {
     margin-bottom: 55px;
     width: 50%;
     
+    &:last-child {
+      margin-bottom: 0;
+    }  
+
     @media @desktop {
       width: 50%;
       padding: 85px 0;
@@ -422,11 +449,11 @@ body {
   }
 
   &__arrow {
-    width: 150px;
-    height: 140px;
+    width: 80px;
+    height: 70px;
 
     background-position: center;
-    background-size: 45px auto;
+    background-size: 25px auto;
     background-repeat: no-repeat;
     background-image: url('../img/icon-arrow.png');
     
@@ -440,8 +467,17 @@ body {
 
     &--prev {
       transform: rotateY(180deg);
-
     }
+    
+    @media @desktop {
+      width: 150px;
+      height: 140px;
+      background-size: 50px auto;
+    }
+  }
+
+  &__img {
+    padding: 0 60px;
   }
 }
 
@@ -456,7 +492,11 @@ body {
   }
 
   &__items {
-    height: 200px;
+    height: 150px;
+
+    @media @desktop {
+      height: 200px;  
+    }
   }
 
   &__nav {
@@ -487,10 +527,15 @@ body {
   flex-wrap: wrap;
 
   &__item {
-    width: 30%;
-    display: block;
+    display: flex;
+    width: ~'calc(50% - 35px)';
+    align-items: center;
+    padding: 15px 0;
 
-    padding: 60px 0;
+    @media @desktop {
+      width: 30%;
+      padding: 60px 0;
+    }
   }
 
 }
@@ -498,19 +543,28 @@ body {
 
 .form {
   &__text {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 300;
-    margin-bottom: 37px;
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    @media @desktop {
+      font-size: 24px;
+      margin-bottom: 38px;
+    }
   }
 
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    box-shadow: @box-shadow;
+    @media @desktop {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      box-shadow: @box-shadow;
+    }
   }
 
   &__input {
+    height: 52px;
     width: 100%;
     font-size: 18px;
     font-weight: 300;
@@ -520,6 +574,8 @@ body {
   }
 
   &__button {
+    width: 100%;
+    justify-content: center;
   
   } 
 }
@@ -528,29 +584,54 @@ body {
 .footer {
   background-color: @color-gray;
   padding: 70px 0;
+  text-align: center;
 
   &__container {
-    display: flex;
-    justify-content: space-between;
+    
+
+
+    @media @desktop {
+      display: flex;  
+      justify-content: space-between;  
+    }
   }
   &__data {
-    display: flex;
-    min-width: 50%;
-    justify-content: space-between;
-
+    margin-bottom: 30px;
+    
+    @media @desktop {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;  
+      min-width: 50%;
+    }
+    
   }
 
   &__title {
+    display: none;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 44px;
     color: @color-font-light;
+    
+
+    &--mobile {
+      display: block;
+      margin-bottom: 25px;
+    }
+
     &--logo {
       color: @color-blue;
     }
+
+    @media @desktop {
+     display: block;
+    }
   }
+
+
 }
 
 .list {
@@ -559,7 +640,7 @@ body {
   list-style: none;
 
   &__item {
-
+    margin-bottom: 8px;
   }
 
   &__link {
