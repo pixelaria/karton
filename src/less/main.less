@@ -110,6 +110,9 @@ body {
     }
     &--info {
       display: none;
+      @media @desktop {
+        display: block;
+      }
     }
   }
 }
@@ -130,10 +133,16 @@ body {
     list-style: none;
     
     display: none;
+
+    @media @desktop {
+      display: flex;
+    }
   }
 
   &__toggler {
-
+    @media @desktop {
+      display: none;
+    }
   }
 
   &__toggler-bar {
@@ -196,8 +205,7 @@ body {
 
 .section {
   position: relative;
-  
-  padding: 90px 0;
+  padding: 75px 0;
 
   @media @desktop {
     padding: 100px 0;
@@ -206,7 +214,11 @@ body {
   &__title {
     font-size: 28px;
     font-weight: 300;
-    
+
+    @media @tablet {
+      font-size: 39px;
+    }    
+
     @media @desktop {
       font-size: 82px;
     }
@@ -218,6 +230,9 @@ body {
     letter-spacing: 0.5px;
     margin-top: 0;
 
+    @media @tablet {
+      font-size: 39px;
+    }
     @media @desktop {
       font-size: 39px;
       font-weight: 300;
@@ -231,6 +246,10 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media @tablet {
+      background-position: right;
+    }
 
     @media @desktop {
       height: 100%;
@@ -262,6 +281,10 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    
+    @media @tablet {
+      padding: 150px 0;
+    }
 
     @media @desktop {
       padding: 250px 0;
@@ -277,9 +300,9 @@ body {
       background-position: 150px 0;
       background-size: contain;
       background-repeat: no-repeat; 
-
-      @media @desktop {
-        background-position: right;  
+  
+      @media @tablet {
+        background-position: right;
       }
     }
 
@@ -329,6 +352,9 @@ body {
     
     text-transform: uppercase;
 
+    @media @tablet {
+      font-size: 70px;
+    }
     @media @desktop {
       font-size: 100px;
       letter-spacing: 3px;
@@ -360,6 +386,10 @@ body {
   span {
     font-weight: 700;
     letter-spacing: 2px;
+  }
+
+  @media @tablet {
+    font-size: 39px;
   }
 
   @media @desktop {
@@ -402,6 +432,9 @@ body {
     font-weight: 700;
     margin-bottom: 9px;
 
+    @media @tablet {
+      font-size: 24px;
+    }
     @media @desktop {
       font-size: 82px;
       margin-bottom: 21px;
@@ -478,13 +511,21 @@ body {
 
   &__img {
     padding: 0 60px;
+    img {
+      @media @tablet {
+        width: auto;
+        margin: auto;
+      }
+    }
   }
 }
 
 
 /* Consult */
 .consult {
-  
+  @media @tablet {
+    padding: 0 60px;
+  }
   @media @desktop {
     width: 50%;
     margin-left: auto;
@@ -532,14 +573,12 @@ body {
     align-items: center;
     padding: 15px 0;
 
-    @media @desktop {
+    @media @tablet{
       width: 30%;
       padding: 60px 0;
     }
   }
-
 }
-
 
 .form {
   &__text {
@@ -571,11 +610,19 @@ body {
     padding: 0 40px;
 
     border: none;
+
+    @media @desktop {
+      height: 81px;
+    }
   }
 
   &__button {
     width: 100%;
     justify-content: center;
+
+    @media @desktop {
+      width: auto;
+    }
   
   } 
 }
@@ -586,25 +633,40 @@ body {
   padding: 70px 0;
   text-align: center;
 
+  @media @tablet {
+    text-align: left;
+  }
+
   &__container {
-    
-
-
     @media @desktop {
       display: flex;  
       justify-content: space-between;  
     }
   }
+  
   &__data {
     margin-bottom: 30px;
     
-    @media @desktop {
-      margin-bottom: 0;
+    @media @tablet {
+      
       display: flex;
       justify-content: space-between;  
       min-width: 50%;
+      order:1;
+    }
+
+    @media @desktop {
+      margin-bottom: 0;
     }
     
+  }
+  
+  &__info {
+    text-align: center;
+
+    @media @desktop {
+      text-align: left;
+    }
   }
 
   &__title {
@@ -613,25 +675,34 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 44px;
     color: @color-font-light;
     
-
-    &--mobile {
-      display: block;
-      margin-bottom: 25px;
-    }
-
     &--logo {
       color: @color-blue;
     }
 
-    @media @desktop {
+    @media @tablet {
      display: block;
+     margin-bottom: 30px;
+    }
+
+    @media @desktop {
+      margin-bottom: 44px;
+    }
+
+    &--mobile {
+      display: block;
+      margin-bottom: 25px;
+      
+      @media @tablet {
+        display: none;
+      }
+
+      @media @desktop {
+        display: none;
+      }
     }
   }
-
-
 }
 
 .list {
