@@ -100,7 +100,7 @@ body {
 .header {
   display: block;
   position: fixed;
-  
+  height: 60px;
   top: 0;
   width: 100%;
 
@@ -125,7 +125,10 @@ body {
 }
 
 .main {
-  padding-top: 100px;
+  padding-top: 60px;
+  @media @desktop {
+    padding-top: 100px;
+  }
 }
 
 .logo {
@@ -187,6 +190,8 @@ body {
   &__item {
     padding: 0 20px;
     margin-bottom: 30px;
+    white-space: nowrap;
+
     @media @desktop {
       margin-bottom: 0;
     }
@@ -281,12 +286,13 @@ body {
 
   &--karton {
     background-image: url('../img/box-white.png');
-    background-size: contain;
+    background-size: auto 300px;
     background-position: center;
     background-repeat: no-repeat;
 
     @media @tablet {
       background-position: right;
+      background-size: auto 320px;
     }
 
     @media @desktop {
@@ -399,7 +405,7 @@ body {
       font-size: 70px;
     }
     @media @desktop {
-      font-size: 98px;
+      font-size: 94px;
       letter-spacing: 3px;
       margin-bottom: 38px;
     }
@@ -408,6 +414,13 @@ body {
   &__img {
     display: none;
 
+    @media @desktop {
+      display: block;
+    }
+  }
+
+  &__scroll {
+    display: none;
     @media @desktop {
       display: block;
     }
