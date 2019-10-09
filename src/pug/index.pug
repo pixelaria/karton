@@ -1,11 +1,13 @@
 include includes/mixins.pug
 doctype html
 html(lang="ru")
-  body
+  include includes/head.pug
+  body.body.body--index
     main.main
       section.section.section--index
         .container
           ul.list-index
             li.list-index__item
               a.list-index__link(href="main.html") Главная
-              
+            li.list-index__item
+              a.list-index__link(href="packaging.html") Упаковка

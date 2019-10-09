@@ -6,5 +6,11 @@ $(function (){
     $('#'+target).toggleClass('nav__list--active');
   });  
 
+
+  $('.packaging__title').click(function(e){
+    console.log('test');
+    $(this).closest('.packaging__item').toggleClass('packaging__item--active');
+  });  
+
 });
 
