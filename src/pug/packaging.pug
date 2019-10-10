@@ -1,0 +1,42 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+include includes/head.pug
+body.body
+    include includes/header.pug
+    main.main
+      section.section.section--page
+        .container
+          h1.section__title Различные виды упаковки
+          ul.breadcrumbs
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="/main.html") Главная
+            li.breadcrumbs__item 
+              span Продукция
+
+          .packaging
+            each val, index in ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона']
+              article.packaging__item
+                .packaging__preview
+                  h3.packaging__title #{val}
+                .packaging__body 
+                  .packaging__gallery
+                    img.packaging__img(src="../img/packaging.png")
+                    button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                  .packaging__text
+                    .section__subtitle #{val}
+                    p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
+                    p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
+            
+
+      section.section.secion--form
+        .container
+          .form
+            h2.section__title Остались вопросы?
+            p.form__text Мы с радостью поможем разобраться
+            .form__wrapper
+              input.form__input(placeholder="Телефон или e-mail")
+              button.form__button.btn.btn--yellow Позвоните мне
+      
+    include includes/footer.pug
+</html>
