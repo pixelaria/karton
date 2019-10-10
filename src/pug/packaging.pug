@@ -15,7 +15,11 @@ body.body
               span Продукция
 
           .packaging
-            each val, index in ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона']
+            - var packaging = ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона']
+            ul.packaging__list
+              each val, index in packaging
+                li.packaging__tab #{val}
+            each val, index in packaging
               article.packaging__item
                 .packaging__preview
                   h3.packaging__title #{val}

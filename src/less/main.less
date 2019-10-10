@@ -907,10 +907,12 @@ body {
 }
 
 .packaging {
-  
+
+
   &__preview {
     border-bottom: 1px solid @color-border;
   }
+
   &__title {
     padding: 15px 0;
     cursor: pointer;
@@ -947,9 +949,13 @@ body {
   }
 
   &__item {
+    @media @desktop {
+      flex-basis: 100%;
+    }
     &--active {
       .packaging__title {
         color: @color-blue;
+        
         &:after {
           border-top-color: @color-blue;
 
@@ -978,6 +984,51 @@ body {
   }
   &__btn {
     margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  &__tab {
+    cursor: pointer;
+    transition: all @transition;
+    margin-bottom: 20px;
+    padding: 5px 90px 5px 0;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 6px;
+      border-radius: 2px;
+      background-color: #aeaeae;
+      margin-left: 15px;
+      transition: all @transition;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    &:hover, &--active {
+      color: @color-blue;
+      &:after {
+        background-color: @color-blue;
+        box-shadow: 0 0 9px rgba(32, 175, 255, 0.78);
+        width: 65px;
+        transition: all @transition;
+        right: -5px;
+      }
+    }
   }
 }
 
