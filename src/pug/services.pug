@@ -1,0 +1,43 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+include includes/head.pug
+body.body
+    include includes/header.pug
+    main.main
+      section.section.section--page
+        .container
+          h1.section__title Технология "Картонного дома"
+          ul.breadcrumbs
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="/main.html") Главная
+            li.breadcrumbs__item
+              span Услуги
+
+          .services
+            ul.services__list
+              - var services = ['Разработка дизайна и конструкции', 'Размотка', 'Печать офсетная / флексографская, лакирование', 'Ламинация' , 'Производство гофрокартона', 'Кашировка', 'Высечка (вырубка)', 'Вклейка пластиковых окошек', 'Склейка', 'Упаковка'];
+              each val, index in services.length ? services : ['There are no values']
+                li.services__item
+                  if (index==1) 
+                    a.services__link.services__link--active(href="#tab-index" +index,) #{val}
+                  else
+                    a.services__link(href="#tab-index" +index,) #{val}
+            .services__data
+              each val, index in services.length ? services : ['There are no values']
+                .services__tab(id="#tab-index" +index) #{val}
+                  .services__desc
+                    p.section__text Мы поможем вам разработать дизайн упаковки с самого начала: 
+                    ul.list
+                     li.list__item проконсультируем по материалам и покажем образцы 
+                     li.list__item выберем оптимальную конструкцию
+                     li.list__item создадим дизайн-макет
+                     li.list__item сделаем цветопробу 
+                     li.list__item изготовим тестовую партию
+
+                  .services__img
+                    img.img.img--responsive(src="../img/service.png")
+
+
+    include includes/footer.pug
+</html>
