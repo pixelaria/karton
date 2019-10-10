@@ -15,18 +15,21 @@ body.body
               span Услуги
 
           .services
-            ul.services__list
+            h2.section__subtitle Возможности нашего производства позволяют оказывать следующие услуги:
+            ul.services__list(role="tablist")
               - var services = ['Разработка дизайна и конструкции', 'Размотка', 'Печать офсетная / флексографская, лакирование', 'Ламинация' , 'Производство гофрокартона', 'Кашировка', 'Высечка (вырубка)', 'Вклейка пластиковых окошек', 'Склейка', 'Упаковка'];
               each val, index in services.length ? services : ['There are no values']
                 li.services__item
                   if (index==1) 
-                    a.services__link.services__link--active(href="#tab-index" +index,) #{val}
+                    a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
                   else
-                    a.services__link(href="#tab-index" +index,) #{val}
-            .services__data
-              each val, index in services.length ? services : ['There are no values']
-                .services__tab(id="#tab-index" +index) #{val}
-                  .services__desc
+                    a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
+            
+            each val, index in services.length ? services : ['There are no values']
+              .services__tab(id="section" +index, role="tabpanel", aria-labelledby="tab"+index) 
+                .services__desc
+                  .services__inner
+                    p.section__text #{val}
                     p.section__text Мы поможем вам разработать дизайн упаковки с самого начала: 
                     ul.list
                      li.list__item проконсультируем по материалам и покажем образцы 
@@ -34,7 +37,6 @@ body.body
                      li.list__item создадим дизайн-макет
                      li.list__item сделаем цветопробу 
                      li.list__item изготовим тестовую партию
-
                   .services__img
                     img.img.img--responsive(src="../img/service.png")
 
