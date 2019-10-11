@@ -104,7 +104,7 @@ body {
   
   &--marked {
     padding-left: 15px;
-  }
+  
 
   &__item {
     display: flex;
@@ -112,17 +112,18 @@ body {
     margin-bottom: 8px;
 
 
-    &:before {
-      content: '';
+      &:before {
+        content: '';
 
-      display: block;
-      width: 6px;
-      height: 6px;
-      
-      background-color: @color-blue;
-      margin-right: 6px;
+        display: block;
+        width: 6px;
+        height: 6px;
+        
+        background-color: @color-blue;
+        margin-right: 6px;
+      }
+
     }
-
   }
 
   &__link {
@@ -1098,6 +1099,70 @@ body {
   }
 }
 
+
+.err-404 {
+  &__back {
+    display: flex;
+    align-items: center;
+    
+    &:before {
+      content: '';
+      display: block;
+      width: 45px;
+      height: 25px;
+
+      margin-right: 10px;
+
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../img/icon-arrow.png');
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__title {
+    font-size: 175px;
+    font-weight: 700;
+    text-align: center;
+    color: @color-blue;
+    margin-bottom: 25px;
+    line-height: 1;
+
+    @media @tablet {
+      font-size: 350px;
+    }
+
+    @media @desktop {
+      font-size: 500px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: 26px;
+    
+    color: #b4b3b3;
+    
+    text-align: center;
+    
+    @media @tablet {
+      font-size: 42px;
+    }
+
+    span {
+      display: block;
+      color: #303030;
+      font-size: 16px;
+      padding: 15px 0;
+
+      @media @tablet {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 /*
  Additional
 */
@@ -1120,6 +1185,7 @@ body {
     &:hover {
       color: @color-yellow;
     }
+
   }
 
   &__item {
@@ -1129,3 +1195,15 @@ body {
 
 
 
+
+
+
+
+
+.services__list {
+  overflow: scroll;
+}
+
+.services__list::-webkit-scrollbar { width: 0 !important }
+.services__list { overflow: -moz-scrollbars-none; }
+.services__list { -ms-overflow-style: none; }

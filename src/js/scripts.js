@@ -89,3 +89,18 @@ $(function (){
   tabs[0].setAttribute('aria-selected', 'true');
   panels[0].hidden = false;
 })();
+
+window.onload = function() {
+  console.log('baron');
+  // Horizontal
+  /*
+  baron({
+      root: '.main__clipper',
+      scroller: '.main__scroller',
+      bar: '.main__bar',
+      scrollingCls: '_scrolling',
+      draggingCls: '_dragging',
+      direction: 'h'
+  });
+  */
+};  

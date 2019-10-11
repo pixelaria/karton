@@ -4,6 +4,7 @@ doctype html
 include includes/head.pug
 body.body
     include includes/header.pug
+    script(src='/js/baron.js')
     main.main
       section.section.section--page
         .container
@@ -16,15 +17,18 @@ body.body
 
           .services
             h2.section__subtitle Возможности нашего производства позволяют оказывать следующие услуги:
-            ul.services__list(role="tablist")
-              - var services = ['Разработка дизайна и конструкции', 'Размотка', 'Печать офсетная / флексографская, лакирование', 'Ламинация' , 'Производство гофрокартона', 'Кашировка', 'Высечка (вырубка)', 'Вклейка пластиковых окошек', 'Склейка', 'Упаковка'];
-              each val, index in services.length ? services : ['There are no values']
-                li.services__item
-                  if (index==1) 
-                    a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
-                  else
-                    a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
-            
+            - var services = ['Разработка дизайна и конструкции', 'Размотка', 'Печать офсетная / флексографская, лакирование', 'Ламинация' , 'Производство гофрокартона', 'Кашировка', 'Высечка (вырубка)', 'Вклейка пластиковых окошек', 'Склейка', 'Упаковка'];
+            .main__clipper
+              .main__scroller
+                ul.services__list(role="tablist")
+                  each val, index in services.length ? services : ['There are no values']
+                    li.services__item
+                      if (index==1) 
+                        a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
+                      else
+                        a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
+              .main__scroll
+                .main__bar
             each val, index in services.length ? services : ['There are no values']
               .services__tab(id="section" +index, role="tabpanel", aria-labelledby="tab"+index) 
                 .services__desc

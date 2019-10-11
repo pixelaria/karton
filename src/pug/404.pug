@@ -1,0 +1,16 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+include includes/head.pug
+body.body
+    include includes/header.pug
+    main.main
+      section.section.section--404
+        .container
+          .err-404
+            a.link.link--blue.err-404__back(href="/main.html") Вернуться на главную
+            .err-404__title 404
+            .err-404__subtitle Что-то пошло не так
+              span и страница не была найдена :(
+    include includes/footer.pug
+</html>
