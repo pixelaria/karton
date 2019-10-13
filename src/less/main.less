@@ -299,8 +299,10 @@ body {
   }
 
   &__title {
+    margin-top: 0;
     font-size: 28px;
     font-weight: 300;
+    margin-bottom: 12px;
 
     @media @tablet {
       font-size: 39px;
@@ -310,7 +312,26 @@ body {
       font-size: 82px;
     }
   }
+  
+  &__desc {
+    margin-bottom: 30px;
+  }
+  
+  &__text {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media @desktop {
+      font-size: 18px;
+    }
+
+  }
+  
   &__subtitle {
     font-size: 26px;
     font-weight: 700;
@@ -1176,7 +1197,180 @@ body {
   }
 }
 
+.certificates {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  margin: 0 -10px;
+
+  @media @tablet {
+    display: block;
+    margin: 0;
+  }
+
+  @media @desktop {
+    display: flex;
+    margin: 50px -30px;
+  }
+  
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-basis: 100%;
+    
+    margin: 0 10px;
+
+    background-color: #ffffff;
+    box-shadow: @box-shadow-2;
+
+    text-decoration: none;
+
+    @media @tablet {
+      margin: 0;
+      margin-bottom: 45px;
+      padding: 40px;
+    }
+
+
+    @media @desktop {
+      margin: 0 30px;
+    }
+    
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+      @media @tablet {
+        content: none;
+      }
+      @media @desktop {
+        content: "";
+      }
+    }
+
+    &--prize {
+
+    }
+
+    &--diploma {
+
+    }
+  }
+
+  &__title {
+    display: none;
+    color: @color-font;
+
+    @media @tablet {
+      display: block;
+      margin: 0 15px;
+    }
+
+    @media @desktop {
+      font-size: 24px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 34px;
+    height: 34px;
+    
+    box-shadow: @box-shadow-2;
+    background-color: @color-white;
+    background-image: url('../img/icon-plus.png');
+
+    background-position: center;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    right: 27px;
+    bottom: -27px;
+
+    border-radius: 50%;
+
+    @media @desktop {
+      width: 67px;
+      height: 67px;
+      background-size: 34px;
+
+
+    }
+  }
+
+  &__icon {
+    flex-basis: 45px;
+    @media @desktop {
+      margin-bottom: 40px;
+      flex-basis: 60px;
+
+    }
+  }
+
+  &__inner {
+    @media @tablet {
+      display: flex;
+      align-items:center;
+      min-width: 280px;
+    }
+
+    @media @desktop {
+      display: block;
+      text-align: center;
+      min-height: 150px
+    }
+  }
+}
+
+
+.about {
+  position: relative;
+  margin-bottom: 80px;
+
+  @media @desktop {
+    margin-bottom: 180px;
+  }
+
+  &__desc {
+    margin-bottom: 28px;
+    @media @desktop {
+      padding: 100px 50% 100px 100px;
+      box-shadow: @box-shadow;
+    }
+  }
+
+  &__text {
+
+  }
+
+  &__img {
+    width: 40%;
+    height: 120%;
+    position: absolute;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    transform: translate(0%,0%);
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+}
+
 /*
+
  Additional
 */
 .body {
