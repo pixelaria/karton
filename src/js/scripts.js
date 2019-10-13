@@ -12,10 +12,41 @@ $(function (){
     $(this).closest('.packaging__item').toggleClass('packaging__item--active');
   });  
 
+  if ($('#map').length) {
+    ymaps.ready(function(){
+      console.log('ymaps ready');
+      
+
+      map = new ymaps.Map("map", {
+          center: [59.670684, 29.903532],
+          zoom: 14,
+          controls: []
+      });
+      placemark=new ymaps.Placemark(
+        [59.66880, 29.908552],
+        {
+          balloonContent:"Производство",
+          balloonContentHeader:"Производство",
+          balloonContentBody:"п.Терволово, ул. Ленинградская, д. 15"
+        },
+        { 
+          
+          
+          iconLayout: 'default#image',
+          iconImageHref: '/wp-content/themes/pixelaria/img/icon-pin-map.png',
+          iconImageSize: [40, 51]
+        
+        });
+
+      map.geoObjects.add(placemark);
+    }); 
+  }
+
 });
 
 
 
+/*
 (function() {
   // Get relevant elements and collections
   const tabbed = document.querySelector('.services');
@@ -89,6 +120,14 @@ $(function (){
   tabs[0].setAttribute('aria-selected', 'true');
   panels[0].hidden = false;
 })();
+*/
+
+
+
+
+
+
+   
 
 window.onload = function() {
   console.log('baron');

@@ -1,0 +1,54 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+include includes/head.pug
+body.body
+  include includes/header.pug
+  main.main
+    section.section.section--page
+      .container
+        h1.section__title Наши Контакты
+        ul.breadcrumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="/main.html") Главная
+          li.breadcrumbs__item 
+            span Контакты
+        
+        .contactt-map
+          .contacts-map
+            .contacts-map__map#map
+            form.contacts-map__form.contacts-form
+              .contacts-form__title Задайте вопрос
+              p.contacts-form__subtitle Наши менеджеры дадут вам быстрый и квалифицированный ответ
+              .contacts-form__group
+                input.contacts-form__input#phone(name="phone")
+                label.contacts-form__label Телефон или e-mai
+              .contacts-form__group
+                input.contacts-form__input#phone(name="text")
+                label.contacts-form__label Ваше сообщение
+              p.contacts-form__desc 
+                | * Нажимая на кнопку, вы даете согласие на 
+                a.link.link--blue(href="/personal.html") обработку своих персональных данных
+              button.contacts-form__btn.btn.btn--yellow Отправить
+        .contacts
+          .contacts__item
+            .contacts__icon
+            .contacts__title Телефон:
+            .contacts__desc (812) 461-64-55
+          .contacts__item
+            .contacts__icon
+            .contacts__title Факс
+            .contacts__desc (812) 461-64-62
+          .contacts__item
+            .contacts__icon
+            .contacts__title E-mail
+            a.contacts__desc.link.link--blue(href="mailto:mail@kartondom.ru") mail@kartondom.ru
+          .contacts__item
+            .contacts__icon
+            .contacts__title Адрес производства
+            .contacts__desc 196655, г. Санкт-Петербург, г. Колпино, Сапёрный переулок, 6
+            
+          
+  script(src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU")
+  include includes/footer.pug
+</html>
