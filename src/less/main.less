@@ -309,12 +309,15 @@ body {
     }    
 
     @media @desktop {
-      font-size: 82px;
+      font-size: 72px;
     }
   }
   
   &__desc {
     margin-bottom: 30px;
+    &--top {
+      padding-top:30px;
+    }
   }
   
   &__text {
@@ -1379,6 +1382,11 @@ body {
     @media @tablet {
       height: 360px;
     }
+
+    @media @desktop {
+      margin-top: 15%;
+      margin-bottom: 15%;
+    }
   }
 
   
@@ -1386,9 +1394,9 @@ body {
     @media @desktop {
       position: absolute;
       width: 470px;
-      left: 100px;
       top: 0;
-      transform: translate(0,0);
+      left: 100px;
+      transform: translate(0,-15%);
     }
 
   }
@@ -1479,12 +1487,84 @@ body {
   &__btn {
     width: 100%;
     justify-content: center;
-    
-    
+  }
+}
+
+.contacts {
+  padding: 0 15px;
+
+  @media @desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
+  &__item {
+    font-size: 16px;
+    margin-bottom: 30px;
+    
 
+    padding-left: 55px;
+    position: relative;
+      
+    @media @desktop {
+      
+    }
 
+    &::before {
+      content:'';
+      display: block;
+      
+      width: 30px;
+      height: 30px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      @media @desktop {
+        position: relative;
+        left: 0;
+        margin: unset;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--phone::before {
+      background-image: url(../img/icon-phone.png);
+    }
+    &--email::before {
+      background-image: url(../img/icon-email.png);
+    }
+    &--fax::before {
+      background-image: url(../img/icon-fax.png);
+    }
+    &--pickpoint::before {
+      background-image: url(../img/icon-pickpoint.png);
+    }
+
+  }
+
+  
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 8px;
+
+  }
+  
+  &__desc {
+    
+  }
+  &__text {
+
+  }
 }
 
 

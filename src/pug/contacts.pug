@@ -31,22 +31,18 @@ body.body
                 a.link.link--blue(href="/personal.html") обработку своих персональных данных
               button.contacts-form__btn.btn.btn--yellow Отправить
         .contacts
-          .contacts__item
-            .contacts__icon
+          .contacts__item.contacts__item--phone
             .contacts__title Телефон:
-            .contacts__desc (812) 461-64-55
-          .contacts__item
-            .contacts__icon
-            .contacts__title Факс
-            .contacts__desc (812) 461-64-62
-          .contacts__item
-            .contacts__icon
-            .contacts__title E-mail
-            a.contacts__desc.link.link--blue(href="mailto:mail@kartondom.ru") mail@kartondom.ru
-          .contacts__item
-            .contacts__icon
-            .contacts__title Адрес производства
-            .contacts__desc 196655, г. Санкт-Петербург, г. Колпино, Сапёрный переулок, 6
+            .contacts__text (812) 461-64-55
+          .contacts__item.contacts__item--fax
+            .contacts__title Факс:
+            .contacts__text (812) 461-64-62
+          .contacts__item.contacts__item--email
+            .contacts__title E-mail:
+            a.contacts__text.link.link--blue(href="mailto:mail@kartondom.ru") mail@kartondom.ru
+          .contacts__item.contacts__item--pickpoint
+            .contacts__title Адрес производства:
+            .contacts__text 196655, г. Санкт-Петербург,<br/> г. Колпино, Сапёрный переулок, 6
             
           
   script(src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU")
