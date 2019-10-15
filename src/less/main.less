@@ -63,7 +63,7 @@ body {
 .btn {
   display: flex;
   align-items: center;
-  
+  justify-content: center;
   
   height: 52px;
   padding: 0 40px;
@@ -1410,9 +1410,7 @@ body {
       left: 100px;
       transform: translate(0,-15%);
     }
-
   }
-
 }
 
 
@@ -1421,6 +1419,11 @@ body {
   margin-bottom: 80px;
   box-shadow: 0 13px 40px rgba(0, 1, 1, 0.07);
   background-color: @color-white;
+
+  &--popup {
+    padding: 0;
+    box-shadow: none;
+  }
 
   @media @desktop {
     padding: 75px 50px 0 50px;
@@ -1433,6 +1436,7 @@ body {
     
     @media @tablet {
       font-size: 39px;
+      margin-top: 0;
       margin-bottom: 25px;
       text-align: center;
     }
@@ -1440,7 +1444,7 @@ body {
 
   &__subtitle {
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     @media @tablet {
       font-size: 18px;
@@ -1484,6 +1488,30 @@ body {
     position:relative;
     border-bottom: 1px solid #c6c6c6;
     margin-bottom: 20px;
+    
+    &--attach {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .contacts-form__label {
+        left: 30px;
+      }
+
+      &:before {
+        content: '';
+        display: block; 
+        width: 21px;
+        min-width: 21px;
+        height: 24px;
+
+  
+        background-image: url('../img/icon-attach.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
   }
 
   &__label {
@@ -1577,6 +1605,80 @@ body {
   }
   &__text {
 
+  }
+}
+
+
+/* Popups, Forms, Cookit, e.t.c.*/
+
+.popup {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    
+    z-index: 2;
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  position: relative;
+  display: block;
+
+  width: 90%;
+  max-width: 300px;  
+  
+  padding: 45px 35px;
+  margin: 60px auto 0 auto;
+
+  background-color: @color-white;
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.05);
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 25px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  &__close {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    background-image: url('../img/icon-close.png');
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+
+    &:hover {
+      transform:rotateZ(180deg);
+    }
+  }
+
+  &--form {
+    padding-bottom: 0;
   }
 }
 

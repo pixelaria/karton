@@ -10,14 +10,14 @@
 </head>
 <body class="body">
   <header class="header">
-    <div class="container header__container"><a class="header__item header__item--logo logo" href="/">Картонный дом</a>
+    <div class="container header__container"><a class="header__item header__item--logo logo" href="main.html">Картонный дом</a>
       <nav class="header___item header__item--nav nav">
         <div class="nav__toggler toggler" id="nav-toggler" data-target="nav"><span class="toggler__bar"></span><span class="toggler__bar"></span><span class="toggler__bar"></span></div>
         <ul class="nav__list" id="nav">
-          <li class="nav__item"><a class="nav__link" href="#">О компании</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Продукция</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Услуги</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+          <li class="nav__item"><a class="nav__link" href="about.html">О компании</a></li>
+          <li class="nav__item"><a class="nav__link" href="packaging.html">Продукция</a></li>
+          <li class="nav__item"><a class="nav__link" href="services.html">Услуги</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
           <li class="nav__item"><a class="header__phone link link--phone" href="tel:+78124616466">8 (812) 461-64-66</a></li>
           <li class="nav__item"><a class="header__callback link link--callback" id="callback">Обратный звонок</a></li>
         </ul>
@@ -73,6 +73,56 @@
     </section>
   </main>
   <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&amp;lang=ru_RU"></script>
+  <div class="popup-overlay">
+    <div class="popup popup--cookie">
+      <div class="popup__close"></div>
+      <div class="popup__text">На сайте используются cookie-файлы. Если прочитав это сообщение, вы остаётесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.</div>
+      <button class="btn btn--yellow popup__btn">Остаюсь</button>
+    </div>
+  </div>
+  <div class="popup-overlay">
+    <div class="popup popup--success">
+      <div class="popup__close"> </div>
+      <div class="popup__title">Заявка успешно сохранена</div>
+      <div class="popup__text">Благодарим за ваше обращение!</div>
+    </div>
+  </div>
+  <div class="popup-overlay">
+    <div class="popup popup--form">
+      <div class="popup__close"> </div>
+      <form class="contacts-form contacts-form--popup">
+        <div class="contacts-form__title">Перезвоните мне</div>
+        <p class="contacts-form__subtitle">Оставьте свой телефон, и мы перезвоним вам в течение 5 минут (пн-пт с 09.00 до 18.00)</p>
+        <div class="contacts-form__group">
+          <input class="contacts-form__input" id="phone" name="phone">
+          <label class="contacts-form__label">Телефон или e-mai</label>
+        </div>
+        <p class="contacts-form__desc">
+           * Нажимая на кнопку, вы даете согласие на <a class="link link--blue" href="/personal.html">обработку своих персональных данных</a></p>
+        <button class="contacts-form__btn btn btn--yellow">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup-overlay">
+    <div class="popup popup--form">
+      <div class="popup__close"> </div>
+      <form class="contacts-form contacts-form--popup">
+        <div class="contacts-form__title">Рассчитаем вашу упаковку</div>
+        <p class="contacts-form__subtitle">У вас уже есть техническое задание или макет? Отправьте нам, и мы сделаем расчёт в течение рабочего дня</p>
+        <div class="contacts-form__group">
+          <input class="contacts-form__input" id="phone" name="phone">
+          <label class="contacts-form__label">Телефон или e-mai</label>
+        </div>
+        <div class="contacts-form__group contacts-form__group--attach">
+          <input class="contacts-form__input" id="phone" name="phone">
+          <label class="contacts-form__label">Прикрепить файл</label>
+        </div>
+        <p class="contacts-form__desc">
+           * Нажимая на кнопку, вы даете согласие на <a class="link link--blue" href="/personal.html">обработку своих персональных данных</a></p>
+        <button class="contacts-form__btn btn btn--yellow">Отправить</button>
+      </form>
+    </div>
+  </div>
   <footer class="footer">
     <div class="container footer__container">
       <div class="footer__data">

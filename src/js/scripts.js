@@ -18,24 +18,19 @@ $(function (){
       
 
       map = new ymaps.Map("map", {
-          center: [59.670684, 29.903532],
+          center: [59.7615, 30.5855],
           zoom: 14,
           controls: []
       });
       placemark=new ymaps.Placemark(
-        [59.66880, 29.908552],
+        [59.761336, 30.602260],
         {
           balloonContent:"Производство",
           balloonContentHeader:"Производство",
-          balloonContentBody:"п.Терволово, ул. Ленинградская, д. 15"
+          balloonContentBody:"196655, г. Санкт-Петербург, г. Колпино, Сапёрный переулок, 6"
         },
         { 
-          
-          
           iconLayout: 'default#image',
-          iconImageHref: '/wp-content/themes/pixelaria/img/icon-pin-map.png',
-          iconImageSize: [40, 51]
-        
         });
 
       map.geoObjects.add(placemark);
