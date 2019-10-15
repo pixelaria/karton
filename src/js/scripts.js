@@ -9,8 +9,19 @@ $(function (){
 
   $('.packaging__title').click(function(e){
     console.log('test');
+    $('.packaging__item').removeClass('packaging__item--active');
     $(this).closest('.packaging__item').toggleClass('packaging__item--active');
   });  
+
+
+  $('.packaging__tab').click(function(e){
+    var index = $(this).data('index');
+    $('.packaging__tab').removeClass('packaging__tab--active');
+    $(this).toggleClass('packaging__tab--active');
+    
+    $('.packaging__item').removeClass('packaging__item--active');
+    $('.packaging__item[data-index="'+index+'"]').toggleClass('packaging__item--active');
+  });
 
   if ($('#map').length) {
     ymaps.ready(function(){
@@ -64,7 +75,7 @@ $(function (){
       speed:600,
       pager:false,
       controls: true,
-      onAfterSlide: function (el) {
+      onBeforeSlide: function (el) {
         var slide = el.getCurrentSlideCount() - 1;
         $('#slider-consult .consult__part').removeClass('consult__part--active');
         $('#slider-consult .consult__part[data-slide="'+slide+'"]').addClass('consult__part--active')
@@ -77,6 +88,11 @@ $(function (){
       $(this).addClass('consult__part--active')
       sliderConsult.goToSlide(slide);
     }); 
+  }
+
+
+  if ($('#services').length) {
+
   }
 });
 

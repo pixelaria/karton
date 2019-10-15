@@ -14,21 +14,26 @@ body.body
             li.breadcrumbs__item 
               span Продукция
 
+          
+
           .packaging
-            - var packaging = ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона']
+            - var packaging = ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона', 'Предложение сетевым магазинам', 'Октабины, большие короба', 'Упаковка для рыбы, мяса, птицы', 'Упаковка для пиццерий, кофеен, ресторанов', 'Упаковка из гофрокартона', 'Двухслойный гофрокартон (Z-картон)', 'Обечайки, решетки, прокладки']
             ul.packaging__list
               each val, index in packaging
-                li.packaging__tab #{val}
+                li.packaging__tab(data-index=index) #{val}
             each val, index in packaging
-              article.packaging__item
+              - var active_class = ''
+              if (index==0) 
+                - active_class = 'packaging__item--active'
+              article(class="packaging__item " + active_class, data-index=index)
                 .packaging__preview
                   h3.packaging__title #{val}
                 .packaging__body 
                   .packaging__gallery
-                    img.packaging__img(src="img/packaging.png")
+                    img.img.img--responsive.packaging__img(src="img/packaging-"+(index+1)+".png")
                     button.packaging__btn.btn.btn--yellow Рассчитать стоимость
-                  .packaging__text
-                    .section__subtitle #{val}
+                  .packaging__desc
+                    h4.section__subtitle #{val}
                     p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
                     p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
             

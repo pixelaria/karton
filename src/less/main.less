@@ -732,6 +732,10 @@ body {
       background-color: @color-blue;      
     }
   }
+
+  &__item {
+    min-height: 200px;
+  }
 }
 
 /* clients */
@@ -935,10 +939,16 @@ body {
 }
 
 .packaging {
-
+  
+  @media @desktop {
+    position: relative;
+  }
 
   &__preview {
     border-bottom: 1px solid @color-border;
+    @media @desktop {
+      display: none;
+    }
   }
 
   &__title {
@@ -974,6 +984,9 @@ body {
     overflow: hidden;
     padding: 0 20px;
     transition: all .3s ease;
+    @media @desktop {
+      transition: opacity @transition;
+    }
   }
 
   &__item {
@@ -997,6 +1010,9 @@ body {
         padding: 15px 20px;
         opacity: 1;
         transition: all @transition;
+        @media @desktop {
+           transition: opacity @transition;
+        }
       }
     }
   }
@@ -1005,31 +1021,52 @@ body {
     display: flex;
     align-items:center;
     flex-direction: column;
+
+    @media @desktop {
+      position: absolute;
+      right: 0;
+      top: 5%;
+      width: 40%;
+      height: 45%;
+    }
   }
 
   &__img {
     margin-bottom: 30px;
+    
+    @media @desktop {
+      max-height: 500px;
+      height: 100%;
+      width: auto;
+    }
   }
+
   &__btn {
     margin-bottom: 30px;
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
+    display: none;
+    @media @desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: relative;
+      width: 45%;
+      margin-bottom: 30px;
+    }
   }
 
   &__tab {
     cursor: pointer;
     transition: all @transition;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     padding: 5px 90px 5px 0;
     position: relative;
+    
     &:after {
       content: '';
       display: block;
@@ -1250,6 +1287,7 @@ body {
     &:before {
       content: "";
       display: block;
+      padding-top: calc(100%);
       padding-top: 100%;
       @media @tablet {
         content: none;
@@ -1305,7 +1343,7 @@ body {
     @media @desktop {
       width: 67px;
       height: 67px;
-      background-size: 34px;
+      background-size: 30px;
       right: 27px;
       bottom: -27px;
 
@@ -1709,12 +1747,7 @@ body {
 }
 
 
-
-
-
-
-
-
+/*
 .services__list {
   overflow: scroll;
 }
@@ -1722,3 +1755,5 @@ body {
 .services__list::-webkit-scrollbar { width: 0 !important }
 .services__list { overflow: -moz-scrollbars-none; }
 .services__list { -ms-overflow-style: none; }
+
+*/

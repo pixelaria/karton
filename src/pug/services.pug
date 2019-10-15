@@ -15,20 +15,16 @@ body.body
             li.breadcrumbs__item
               span Услуги
 
-          .services
-            h2.section__subtitle Возможности нашего производства позволяют оказывать следующие услуги:
+          h2.section__subtitle Возможности нашего производства позволяют оказывать следующие услуги:
+          .services#services
             - var services = ['Разработка дизайна и конструкции', 'Размотка', 'Печать офсетная / флексографская, лакирование', 'Ламинация' , 'Производство гофрокартона', 'Кашировка', 'Высечка (вырубка)', 'Вклейка пластиковых окошек', 'Склейка', 'Упаковка'];
-            .main__clipper
-              .main__scroller
-                ul.services__list(role="tablist")
-                  each val, index in services.length ? services : ['There are no values']
-                    li.services__item
-                      if (index==1) 
-                        a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
-                      else
-                        a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
-              .main__scroll
-                .main__bar
+            ul.services__list(role="tablist")
+              each val, index in services.length ? services : ['There are no values']
+                li.services__item
+                  if (index==1) 
+                    a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
+                  else
+                    a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
             each val, index in services.length ? services : ['There are no values']
               .services__tab(id="section" +index, role="tabpanel", aria-labelledby="tab"+index) 
                 .services__desc
