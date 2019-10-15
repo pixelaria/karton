@@ -19,33 +19,56 @@ body.body
       
       section.section.section--slider.section--gray
         
-        .slider
+        .slider#slider-packaging 
           .slider__items
             .slider__item
               .container.slider__container
                 .slider__desc
-                  h2.section__subtitle Упаковка из картона
+                  h2.section__subtitle Упаковка из картона 1
                   p.section__text Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.
                 .slider__img
                   img.img.img--responsive(src="img/box-black.png")
-            .slider__nav
-              .slider__arrow.slider__arrow--prev
-              .slider__arrow.slider__arrow--next
+            .slider__item
+              .container.slider__container
+                .slider__desc
+                  h2.section__subtitle Упаковка из картона 2
+                  p.section__text Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.
+                .slider__img
+                  img.img.img--responsive(src="img/box-black.png")
+            .slider__item
+              .container.slider__container
+                .slider__desc
+                  h2.section__subtitle Упаковка из картона 3
+                  p.section__text Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.
+                .slider__img
+                  img.img.img--responsive(src="img/box-black.png")
+          .slider__nav
+            .slider__arrow.slider__arrow--prev
+            .slider__arrow.slider__arrow--next
 
               
       section.section.section--consult
         .section__inner
           .container
-            .consult
+            .consult#slider-consult
               .consult__items
                 .consult__item
-                  h2.section__subtitle.consult__title Консультации
+                  h2.section__subtitle.consult__title Консультации 1
+                  .consult__text Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки
+                .consult__item
+                  h2.section__subtitle.consult__title Консультации 2
+                  .consult__text Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки
+                .consult__item
+                  h2.section__subtitle.consult__title Консультации 3
+                  .consult__text Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки
+                .consult__item
+                  h2.section__subtitle.consult__title Консультации 4
                   .consult__text Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки
               .consult__nav
-                .consult__part.consult__part--active
-                .consult__part
-                .consult__part
-                .consult__part
+                .consult__part.consult__part--active(data-slide="0")
+                .consult__part(data-slide="1")
+                .consult__part(data-slide="2")
+                .consult__part(data-slide="3")
       section.section.section--promo
         .container
           .promo

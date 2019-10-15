@@ -709,11 +709,7 @@ body {
   }
 
   &__items {
-    height: 150px;
-
-    @media @desktop {
-      height: 200px;  
-    }
+    margin-bottom: 30px;
   }
 
   &__nav {
@@ -723,7 +719,8 @@ body {
   }
 
   &__part {
-    height: 3px;
+    height: 4px;
+    border-radius: 1px;
     width: 100%;
     margin: 0 4px;
     background-color: @color-gray;
@@ -1592,19 +1589,9 @@ body {
 
   }
 
-  
-
   &__title {
     font-weight: 700;
     margin-bottom: 8px;
-
-  }
-  
-  &__desc {
-    
-  }
-  &__text {
-
   }
 }
 
@@ -1612,6 +1599,12 @@ body {
 /* Popups, Forms, Cookit, e.t.c.*/
 
 .popup {
+  display: none;
+  
+  &--active {
+    display: block;
+  }
+
   &-overlay {
     position: fixed;
     top: 0;

@@ -42,39 +42,69 @@
       </div>
     </section>
     <section class="section section--slider section--gray">
-      <div class="slider">
+      <div class="slider" id="slider-packaging"> 
         <div class="slider__items">
           <div class="slider__item">
             <div class="container slider__container">
               <div class="slider__desc">
-                <h2 class="section__subtitle">Упаковка из картона</h2>
+                <h2 class="section__subtitle">Упаковка из картона 1</h2>
                 <p class="section__text">Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.</p>
               </div>
               <div class="slider__img"><img class="img img--responsive" src="img/box-black.png"></div>
             </div>
           </div>
-          <div class="slider__nav">
-            <div class="slider__arrow slider__arrow--prev"></div>
-            <div class="slider__arrow slider__arrow--next"></div>
+          <div class="slider__item">
+            <div class="container slider__container">
+              <div class="slider__desc">
+                <h2 class="section__subtitle">Упаковка из картона 2</h2>
+                <p class="section__text">Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.</p>
+              </div>
+              <div class="slider__img"><img class="img img--responsive" src="img/box-black.png"></div>
+            </div>
           </div>
+          <div class="slider__item">
+            <div class="container slider__container">
+              <div class="slider__desc">
+                <h2 class="section__subtitle">Упаковка из картона 3</h2>
+                <p class="section__text">Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.</p>
+              </div>
+              <div class="slider__img"><img class="img img--responsive" src="img/box-black.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__nav">
+          <div class="slider__arrow slider__arrow--prev"></div>
+          <div class="slider__arrow slider__arrow--next"></div>
         </div>
       </div>
     </section>
     <section class="section section--consult">
       <div class="section__inner">
         <div class="container">
-          <div class="consult">
+          <div class="consult" id="slider-consult">
             <div class="consult__items">
               <div class="consult__item">
-                <h2 class="section__subtitle consult__title">Консультации</h2>
+                <h2 class="section__subtitle consult__title">Консультации 1</h2>
+                <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
+              </div>
+              <div class="consult__item">
+                <h2 class="section__subtitle consult__title">Консультации 2</h2>
+                <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
+              </div>
+              <div class="consult__item">
+                <h2 class="section__subtitle consult__title">Консультации 3</h2>
+                <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
+              </div>
+              <div class="consult__item">
+                <h2 class="section__subtitle consult__title">Консультации 4</h2>
                 <div class="consult__text">Наши специалисты подробно проконсультируют вас по выбору материала и конструкции упаковки</div>
               </div>
             </div>
             <div class="consult__nav">
-              <div class="consult__part consult__part--active"></div>
-              <div class="consult__part"></div>
-              <div class="consult__part"></div>
-              <div class="consult__part"></div>
+              <div class="consult__part consult__part--active" data-slide="0"></div>
+              <div class="consult__part" data-slide="1"></div>
+              <div class="consult__part" data-slide="2"></div>
+              <div class="consult__part" data-slide="3"></div>
             </div>
           </div>
         </div>
@@ -142,15 +172,11 @@
       <div class="popup__text">На сайте используются cookie-файлы. Если прочитав это сообщение, вы остаётесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.</div>
       <button class="btn btn--yellow popup__btn">Остаюсь</button>
     </div>
-  </div>
-  <div class="popup-overlay">
     <div class="popup popup--success">
       <div class="popup__close"> </div>
       <div class="popup__title">Заявка успешно сохранена</div>
       <div class="popup__text">Благодарим за ваше обращение!</div>
     </div>
-  </div>
-  <div class="popup-overlay">
     <div class="popup popup--form">
       <div class="popup__close"> </div>
       <form class="contacts-form contacts-form--popup">
@@ -165,8 +191,6 @@
         <button class="contacts-form__btn btn btn--yellow">Отправить</button>
       </form>
     </div>
-  </div>
-  <div class="popup-overlay">
     <div class="popup popup--form">
       <div class="popup__close"> </div>
       <form class="contacts-form contacts-form--popup">
