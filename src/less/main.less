@@ -38,7 +38,7 @@ body {
   text-decoration: none;
 
   border-bottom: 1px solid transparent;
-  transition: all 0.3s ease-in-out;
+  transition: all @transition;
   cursor: pointer;
   
   &--callback {
@@ -74,7 +74,7 @@ body {
   border: none;
   cursor: pointer;
 
-  transition: all 0.3s ease-in-out;
+  transition: all @transition;
 
   &--yellow {
     background-color: @color-yellow;
@@ -481,9 +481,27 @@ body {
 
   &__img {
     display: none;
+    margin-left: 1em;
 
     @media @desktop {
       display: block;
+      visibility: hidden;
+
+      &--white {
+        z-index: 2;
+      }
+
+      &--black {
+        z-index: 1;
+      }
+
+      &--fixed {
+        visibility: visible;
+
+        position: fixed;
+        right: ~'calc(((100vw - 1140px)/ 2) + 4.5em)';
+        
+      }
     }
   }
 
@@ -687,6 +705,8 @@ body {
 
   &__img {
     padding: 0 60px;
+
+    &--karton { visibility: hidden; }
     img {
       @media @tablet {
         width: auto;
@@ -1455,13 +1475,38 @@ body {
   box-shadow: 0 13px 40px rgba(0, 1, 1, 0.07);
   background-color: @color-white;
 
-  &--popup {
-    padding: 0;
-    box-shadow: none;
-  }
+  
 
   @media @desktop {
     padding: 75px 50px 0 50px;
+  }
+
+  &--popup {
+    box-shadow: none;
+    
+    @media @desktop {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      .contacts-form__title {
+        flex-basis: 100%;
+        text-align: left;
+        margin-bottom: 50px;
+      }
+      .contacts-form__inner, .contacts-form__subtitle {
+        flex-basis: 45%;
+      }
+      .contacts-form__inner {
+        order:1;
+      }
+
+      .contacts-form__subtitle {
+        order:2;
+      }
+    }
   }
 
   &__title {
@@ -1662,7 +1707,7 @@ body {
   }
   
   position: relative;
-  display: block;
+  
 
   width: 90%;
   max-width: 300px;  
@@ -1672,6 +1717,19 @@ body {
 
   background-color: @color-white;
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.05);
+
+  @media @desktop {
+    margin: 10% auto 0 auto;          
+  
+    &--form {
+      max-width: 900px;
+      padding: 45px 60px 0 60px;
+    }
+  }
+  
+  &__desc {
+    display: none;
+  }
 
   &__title {
     text-align: center;
@@ -1701,7 +1759,7 @@ body {
     background-position: center;
     background-size: contain;
     cursor: pointer;
-    transition: transform .3s ease-in-out;
+    transition: transform @transition;
 
     &:hover {
       transform:rotateZ(180deg);

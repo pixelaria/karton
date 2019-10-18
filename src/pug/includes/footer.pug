@@ -1,40 +1,42 @@
 .popup-overlay
-  .popup.popup--cookie
+  .popup.popup--cookie(data-popup="cookie")
     .popup__close
     .popup__text На сайте используются cookie-файлы. Если прочитав это сообщение, вы остаётесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.
     button.btn.btn--yellow.popup__btn Остаюсь
-  .popup.popup--success
+  .popup.popup--success(data-popup="success")
     .popup__close 
     .popup__title Заявка успешно сохранена
     .popup__text Благодарим за ваше обращение!
-  .popup.popup--form
+  .popup.popup--form(data-popup="callback")
     .popup__close 
     form.contacts-form.contacts-form--popup
       .contacts-form__title Перезвоните мне
       p.contacts-form__subtitle Оставьте свой телефон, и мы перезвоним вам в течение 5 минут (пн-пт с 09.00 до 18.00)
-      .contacts-form__group
-        input.contacts-form__input#phone(name="phone")
-        label.contacts-form__label Телефон или e-mai
-      p.contacts-form__desc 
-        | * Нажимая на кнопку, вы даете согласие на 
-        a.link.link--blue(href="/personal.html") обработку своих персональных данных
-      button.contacts-form__btn.btn.btn--yellow Отправить
-  .popup.popup--form
+      .contacts-form__inner
+        .contacts-form__group
+          input.contacts-form__input#phone(name="phone")
+          label.contacts-form__label Телефон или e-mai
+        p.contacts-form__desc 
+          | * Нажимая на кнопку, вы даете согласие на 
+          a.link.link--blue(href="/personal.html") обработку своих персональных данных
+        button.contacts-form__btn.btn.btn--yellow Отправить
+  .popup.popup--form(data-popup="calc")
     .popup__close 
     form.contacts-form.contacts-form--popup
       .contacts-form__title Рассчитаем вашу упаковку
       p.contacts-form__subtitle У вас уже есть техническое задание или макет? Отправьте нам, и мы сделаем расчёт в течение рабочего дня
-      .contacts-form__group
-        input.contacts-form__input#phone(name="phone")
-        label.contacts-form__label Телефон или e-mai
-      .contacts-form__group.contacts-form__group--attach
-        input.contacts-form__input#phone(name="phone")
-        label.contacts-form__label Прикрепить файл
-      p.contacts-form__desc 
-        | * Нажимая на кнопку, вы даете согласие на 
-        a.link.link--blue(href="/personal.html") обработку своих персональных данных
-      button.contacts-form__btn.btn.btn--yellow Отправить
-    
+      .contacts-form__inner
+        .contacts-form__group
+          input.contacts-form__input#phone(name="phone")
+          label.contacts-form__label Телефон или e-mai
+        .contacts-form__group.contacts-form__group--attach
+          input.contacts-form__input#phone(name="phone")
+          label.contacts-form__label Прикрепить файл
+        p.contacts-form__desc 
+          | * Нажимая на кнопку, вы даете согласие на 
+          a.link.link--blue(href="/personal.html") обработку своих персональных данных
+        button.contacts-form__btn.btn.btn--yellow Отправить
+
     
 
 footer.footer

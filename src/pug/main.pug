@@ -10,9 +10,13 @@ body.body
           .karton
             .karton__desc
               h1.karton__title Упаковка <br/> из картона
-              button.karton__btn.btn.btn--yellow Рассчитать стоимость
-            .karton__img
+              button.karton__btn.btn.btn--yellow(data-popup data-target="calc") Рассчитать стоимость
+            .karton__img.karton__img--main
               img.img.img--responsive(src="img/box-white.png")
+            .karton__img.karton__img--fixed.karton__img--white
+              img.img.img--responsive(src="img/box-white.png")
+            .karton__img.karton__img--fixed.karton__img--black
+              img.img.img--responsive(src="img/box-black.png")
             .karton__scroll.scroll
               .scroll__mouse
                 .scroll__wheel
@@ -26,7 +30,7 @@ body.body
                 .slider__desc
                   h2.section__subtitle Упаковка из картона 1
                   p.section__text Упаковка из полиграфического картона: лёгкая, экологичная, недорогая, яркая. Наше оборудование позволяет печатать по картонам плотностью до 840г/м2, так как мы одними из немногих в России освоили технологию офсетной печати по материалам с таким высоким граммажом.
-                .slider__img
+                .slider__img.slider__img--karton
                   img.img.img--responsive(src="img/box-black.png")
             .slider__item
               .container.slider__container

@@ -94,6 +94,57 @@ $(function (){
   if ($('#services').length) {
 
   }
+
+  /* POPUPS */
+  $('[data-popup]').click(function(e){
+    var target = $(this).data('target');
+    var overlay = $('.popup-overlay');
+    var popup = $('.popup[data-popup="'+target+'"]');
+    
+    if (popup) {
+      overlay.addClass('popup-overlay--active');
+      popup.addClass('popup--active');
+    }
+  });
+
+  $(window).click(function() {
+    $('.popup--active').removeClass('popup--active');
+    $('.popup-overlay--active').removeClass('popup-overlay--active');
+  });
+
+  $('.popup__close').click(function(e){
+    $('.popup--active').removeClass('popup--active');
+    $('.popup-overlay--active').removeClass('popup-overlay--active');
+    return false;
+
+  });
+  
+  $('.popup, [data-popup]').click(function(event){
+      event.stopPropagation();
+  });
+
+
+  
+  var white = $('.karton__img--white');
+  var aTop = white.offset().top;
+  var bTop = $('.slider__img').offset().top;
+  var _100 = (bTop-aTop);
+  var scrollable = true;
+  $(window).scroll(function(){
+    if (scrollable) {
+      var scroll = 1;
+      if ($(this).scrollTop()) scroll = 1 - $(this).scrollTop()/_100;
+      white.fadeTo(0,scroll);
+
+      //console.log(aTop,bTop,_100,$(this).scrollTop(),scroll);
+      if($(this).scrollTop()>=_100){
+        scrollable = false;
+        $('.karton__img--main').css('visibility', 'visible');
+        $('.slider__img--karton').css('visibility', 'visible');
+        $('.karton__img--fixed').hide();
+      }
+    }
+  });
 });
 
 
@@ -101,7 +152,8 @@ $(function (){
 /*
 (function() {
   // Get relevant elements and collections
-  const tabbed = document.querySelector('.services');
+  const tabbed = document.querySelector('.services');\
+  ]''
   const tablist = tabbed.querySelector('ul');
   const tabs = tablist.querySelectorAll('a');
   const panels = tabbed.querySelectorAll('[id^="section"]');
@@ -173,13 +225,6 @@ $(function (){
   panels[0].hidden = false;
 })();
 */
-
-
-
-
-
-
-   
 
 window.onload = function() {
   console.log('baron');
