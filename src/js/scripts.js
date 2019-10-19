@@ -70,7 +70,10 @@ $(function (){
   if ($('#slider-consult').length) {
     var sliderConsult = $('#slider-consult .consult__items').lightSlider({
       item:1,
-      loop:false,
+      auto:true,
+      pauseOnHover: true,
+      loop:true,
+      pause: 3000,
       slideMove:1,
       speed:600,
       pager:false,
@@ -125,26 +128,55 @@ $(function (){
 
 
   
-  var white = $('.karton__img--white');
-  var aTop = white.offset().top;
-  var bTop = $('.slider__img').offset().top;
-  var _100 = (bTop-aTop);
-  var scrollable = true;
-  $(window).scroll(function(){
-    if (scrollable) {
-      var scroll = 1;
-      if ($(this).scrollTop()) scroll = 1 - $(this).scrollTop()/_100;
-      white.fadeTo(0,scroll);
-
-      //console.log(aTop,bTop,_100,$(this).scrollTop(),scroll);
-      if($(this).scrollTop()>=_100){
-        scrollable = false;
-        $('.karton__img--main').css('visibility', 'visible');
-        $('.slider__img--karton').css('visibility', 'visible');
-        $('.karton__img--fixed').hide();
+  if ($('.karton').length) {
+    var white = $('.karton__img--white');
+    var aTop = white.offset().top;
+    var bTop = $('.slider__img').offset().top;
+    var _100 = (bTop-aTop);
+    var scrollable = true;
+    
+    $(window).scroll(function(){
+      if (scrollable) {
+        var scroll = 1;
+        
+        if ($(this).scrollTop()) scroll = 1 - $(this).scrollTop()/_100;
+        white.fadeTo(0,scroll);
+        
+        if($(this).scrollTop()>=_100){
+          scrollable = false;
+          $('.karton__img--main').css('visibility', 'visible');
+          $('.slider__img--karton').css('visibility', 'visible');
+          $('.karton__img--fixed').hide();
+        }
       }
+    });
+  }
+
+
+  /* COOKIES */
+
+  var cookie_msg = document.cookie.match(new RegExp("(?:^|; )karton-cookie-active=([^;]*)"));
+    cookie_msg = cookie_msg ? decodeURIComponent(cookie_msg[1]) : undefined;
+
+  if(!cookie_msg) {
+    $('.cookie').addClass('cookie--active');
+
+    var popup = $('.popup[data-popup="cookie"]');
+    var overlay = $('.popup-overlay');
+    
+    if (popup) {
+      overlay.addClass('popup-overlay--active');
+      popup.addClass('popup--active');
     }
+   
+  }
+
+  $('.popup__btn--cookie').click(function(e){
+    overlay.removeClass('popup-overlay--active');
+    popup.removeClass('popup--active');
+    document.cookie = "karton-cookie-active=1";
   });
+
 });
 
 

@@ -10,7 +10,7 @@ body, html {
   color: @color-font;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 body {
@@ -351,6 +351,16 @@ body {
       font-size: 39px;  
     }
   }
+  
+  &--404 {
+    @media @desktop {
+      height: ~'calc(100vh - 100px)';
+
+      .container {
+        height: 100%;
+      }
+    }
+  }
 
   &--karton {
     background-image: url('../img/box-white.png');
@@ -493,6 +503,9 @@ body {
     width: 390px;
     min-width: 390px;
     
+    &--fixed {
+      visibility: hidden;
+    }
 
     @media @desktop {
       display: block;
@@ -507,11 +520,11 @@ body {
       }
 
       &--fixed {
+        display: block;
         visibility: visible;
 
         position: fixed;
         right: ~'calc(((100vw - 1140px)/ 2) + 6px)';
-        
       }
     }
   }
@@ -642,6 +655,10 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 9px;
+    
+    &--now {
+      white-space: nowrap;
+    }
 
     @media @tablet {
       font-size: 24px;
@@ -723,8 +740,19 @@ body {
   }
 
   &__img {
+    padding: 5px 50px;
     
-    &--karton { visibility: hidden; width:390px; height: auto;}
+    @media @desktop {
+      padding: 0;
+    }
+    
+    &--karton { 
+      @media @desktop {
+        visibility: hidden; 
+        width:390px; 
+        height: auto;
+      }
+    }
     
   }
 }
@@ -776,6 +804,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 30px;
 
   &__item {
     display: flex;
@@ -784,8 +813,9 @@ body {
     padding: 15px 0;
 
     @media @tablet{
-      width: 30%;
+      width: 25%;
       padding: 60px 0;
+      margin: 0 15px;
     }
   }
 }
@@ -941,6 +971,7 @@ body {
 
   @media @tablet {
     font-size: 16px;
+    margin-bottom: 60px;
   }
   
   &__item {
@@ -1198,6 +1229,9 @@ body {
 
 
 .err-404 {
+  @media @desktop {
+    height: 100%;
+  }
   &__back {
     display: flex;
     align-items: center;
@@ -1231,19 +1265,12 @@ body {
     }
 
     @media @desktop {
-      font-size: 500px;
-      &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height:auto;
-
-        background-image: url('../img/cats.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;  
-      }
-
+      font-size: 0;
+      height: ~'calc(100% - 120px)';
+      background-image: url('../img/404.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+      background-position:center;
       
     }
   }
@@ -1738,6 +1765,13 @@ body {
       max-width: 900px;
       padding: 45px 60px 0 60px;
     }
+
+    &--cookie {
+      margin:0;            
+      right: 0;
+      top:15%;
+      position: absolute;
+    }
   }
   
   &__desc {
@@ -1759,6 +1793,10 @@ body {
     padding: 25px 0;
     width: 100%;
     text-align: center;
+
+    &--cookie {
+      margin-top: 15px;
+    }
   }
   
   &__close {
