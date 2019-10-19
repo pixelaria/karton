@@ -95,7 +95,31 @@ $(function (){
 
 
   if ($('#services').length) {
-
+     var sliderServices = $('#services .services__list').lightSlider({
+      item:6,
+      loop:false,
+      slideMove:1,
+      speed:600,
+      pager:false,
+      controls: true,
+      responsive : [
+          {
+              breakpoint:800,
+              settings: {
+                  item:3,
+                  slideMove:1,
+                  slideMargin:6,
+                }
+          },
+          {
+              breakpoint:480,
+              settings: {
+                  item:2,
+                  slideMove:1
+                }
+          }
+      ]
+    });
   }
 
   /* POPUPS */
@@ -191,12 +215,9 @@ $(function (){
 });
 
 
-
-/*
 (function() {
   // Get relevant elements and collections
-  const tabbed = document.querySelector('.services');\
-  ]''
+  const tabbed = document.querySelector('.services');
   const tablist = tabbed.querySelector('ul');
   const tabs = tablist.querySelectorAll('a');
   const panels = tabbed.querySelectorAll('[id^="section"]');
@@ -232,8 +253,10 @@ $(function (){
     tab.addEventListener('click', e => {
       e.preventDefault();
       let currentTab = tablist.querySelector('[aria-selected]');
+      currentTab.classList.remove('services__link--active');
       if (e.currentTarget !== currentTab) {
         switchTab(currentTab, e.currentTarget);
+        e.currentTarget.classList.add('services__link--active');
       }
     });
     
@@ -267,19 +290,3 @@ $(function (){
   tabs[0].setAttribute('aria-selected', 'true');
   panels[0].hidden = false;
 })();
-*/
-
-window.onload = function() {
-  console.log('baron');
-  // Horizontal
-  /*
-  baron({
-      root: '.main__clipper',
-      scroller: '.main__scroller',
-      bar: '.main__bar',
-      scrollingCls: '_scrolling',
-      draggingCls: '_dragging',
-      direction: 'h'
-  });
-  */
-};  

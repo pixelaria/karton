@@ -21,7 +21,7 @@ body.body
             ul.services__list(role="tablist")
               each val, index in services.length ? services : ['There are no values']
                 li.services__item
-                  if (index==1) 
+                  if (index==0) 
                     a.services__link.services__link--active(id="tab"+index, href="#section" +index, role="tab", data-toggle="tab") #{val}
                   else
                     a.services__link(href="#section" +index, role="tab", data-toggle="tab") #{val}
@@ -31,7 +31,7 @@ body.body
                   .services__inner
                     p.section__text #{val}
                     p.section__text Мы поможем вам разработать дизайн упаковки с самого начала: 
-                    ul.list
+                    ul.list.list--marked
                      li.list__item проконсультируем по материалам и покажем образцы 
                      li.list__item выберем оптимальную конструкцию
                      li.list__item создадим дизайн-макет
