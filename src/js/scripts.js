@@ -152,6 +152,17 @@ $(function (){
     });
   }
 
+  if ($('.certificates')) {
+    $('.certificates').magnificPopup({
+      delegate: 'a', // child items selector, by clicking on it popup will open
+      type: 'image',
+      zoom: {
+        enabled: true,
+        duration: 400 // don't foget to change the duration also in CSS
+      }
+    });
+  }
+
 
   /* COOKIES */
 
