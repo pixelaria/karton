@@ -89,7 +89,7 @@ $(function (){
       var slide = $(this).data('slide');
       $('#slider-consult .consult__part').removeClass('consult__part--active');
       $(this).addClass('consult__part--active')
-      sliderConsult.goToSlide(slide);
+      sliderConsult.goToSlide(slide+1);
     }); 
   }
 
