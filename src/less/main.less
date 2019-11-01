@@ -1741,6 +1741,24 @@ body {
         background-repeat: no-repeat;
       }
     }
+
+    &.has-error {
+      border-color:red;
+      
+      .contacts-form__label {
+        color: red;
+        opacity: 0.6;
+      }
+    }
+
+    .error {
+      font-size: 13px;
+      color: red;
+      position: absolute;
+      bottom: -30px;
+      opacity: 0.6;
+      right: 0;
+    }
   }
 
   &__label {
