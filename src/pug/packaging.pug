@@ -5,47 +5,287 @@ include includes/head.pug
 body.body
     include includes/header.pug
     main.main
-      section.section.section--page
-        .container
-          h1.section__title Различные виды упаковки
-          ul.breadcrumbs
-            li.breadcrumbs__item
-              a.breadcrumbs__link(href="/main.html") Главная
-            li.breadcrumbs__item 
-              span Продукция
+        section.section.section--page
+            .container
+                h1.section__title Различные виды упаковки
+                ul.breadcrumbs
+                    li.breadcrumbs__item
+                        a.breadcrumbs__link(href="/main.html") Главная
+                    li.breadcrumbs__item
+                        span Продукция
+                .packaging
+                    - var packaging = ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона', 'Предложение сетевым магазинам', 'Октабины, большие короба', 'Упаковка для рыбы, мяса, птицы', 'Упаковка для пиццерий, кофеен, ресторанов', 'Упаковка из гофрокартона', 'Двухслойный гофрокартон (Z-картон)', 'Обечайки, решетки, прокладки']
+                    ul.packaging__list
+                        each val, index in packaging
+                            li.packaging__tab(data-index=index) #{val}
 
-          
+                    article.packaging__item.packaging__item--active(data-index=0)
+                        .packaging__preview
+                            h3.packaging__title Посуда
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-1.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Посуда
+                                p.section__text Упаковка для посуды должна выполнять сразу две важные функции: защищать столь хрупкую продукцию от повреждений и одновременно быть привлекательной для покупателя.
+                                p.section__text Наша компания предлагает изготовить для вас упаковку любой сложности из картона, микрогофрокартона, гофрированного картона с полноцветной печатью, лакированием, вклейкой прозрачных окошек, тиснением…
+                                p.section__text Прочная, экологически чистая, привлекательная внешне упаковка приятно дополнит вашу продукцию и подчеркнёт в глазах потребителя.
+                                p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
 
-          .packaging
-            - var packaging = ['Посуда', 'Медицинские товары', 'Кондитерские продукты', 'Детские товары', 'Промышленные товары и техника','Овощи и фрукты', 'Автотовары', 'Обувь', 'Транспортные паллеты из гофрокартона', 'Предложение сетевым магазинам', 'Октабины, большие короба', 'Упаковка для рыбы, мяса, птицы', 'Упаковка для пиццерий, кофеен, ресторанов', 'Упаковка из гофрокартона', 'Двухслойный гофрокартон (Z-картон)', 'Обечайки, решетки, прокладки']
-            ul.packaging__list
-              each val, index in packaging
-                li.packaging__tab(data-index=index) #{val}
-            each val, index in packaging
-              - var active_class = ''
-              if (index==0) 
-                - active_class = 'packaging__item--active'
-              article(class="packaging__item " + active_class, data-index=index)
-                .packaging__preview
-                  h3.packaging__title #{val}
-                .packaging__body 
-                  .packaging__gallery
-                    img.img.img--responsive.packaging__img(src="img/packaging-"+(index+1)+".png")
-                    button.packaging__btn.btn.btn--yellow Рассчитать стоимость
-                  .packaging__desc
-                    h4.section__subtitle #{val}
-                    p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
-                    p.section__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde illum autem deserunt laborum nam repellat accusantium incidunt nobis alias est quos, ex atque fuga magni iste consequuntur necessitatibus facere enim!
-            
 
-      section.section.secion--form
-        .container
-          .form
-            h2.section__title Остались вопросы?
-            p.form__text Мы с радостью поможем разобраться
-            .form__wrapper
-              input.form__input(placeholder="Телефон или e-mail")
-              button.form__button.btn.btn--yellow Позвоните мне
-      
+                    article.packaging__item(data-index=1)
+                        .packaging__preview
+                            h3.packaging__title Медицинские товары
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-2.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Медицинские товары
+                                p.section__text Изготовление упаковки для товаров медицинского назначения специфично, требует специализированного оборудования и опыта работы.
+                                p.section__text Мы готовы предложить вам наши услуги по производству упаковки для медикаментов из картона различной плотности (граммажа) с полноцветной печатью, лакированием, тиснением (шрифт Брайля), склейкой.
+                                p.section__text Помимо прочего наша компания изготавливает инструкции, транспортную упаковку из гофрированного картона с одно- двухцветной печатью, для групповой упаковки.
+                                p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=2)
+                        .packaging__preview
+                            h3.packaging__title Кондитерские товары
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-3.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Кондитерские товары
+                                p.section__text Кажется, что вкус и внешний вид кондитерских изделий должен говорить сам за себя, но для того чтобы эти важнейшие качества вашей продукции не исчезли в процессе транспортировки или хранения, наша компания предлагает вам лёгкую, прочную, экологически чистую упаковку из картона, микрогофрокартона с полноцветной печатью, сложной высечкой, прозрачными окошками и тиснением, ламинированием, созданием барьерных покрытий.
+                                p.section__text Упаковка для кондитерских изделий всегда отличалась сложностью, уникальностью, смелыми дизайнерскими решениями и мы имеем в этом большой опыт.
+                                p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=3)
+                        .packaging__preview
+                            h3.packaging__title Детские товары
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-4.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Детские товары
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Продукция для самых маленьких требует особого подхода, будь то настольные игры, одежда, игрушки или товары по уходу.
+                                        p.section__text Упаковка должна безусловно соответствовать содержанию, быть яркой, информативной нести на себе необходимые отметки об ограничениях и безопасности, при этом сама должна быть безопасной.
+                                        p.section__text Именно такую упаковку мы готовы предложить вам, изготовленную из экологически чистого гофрокартона, прочную, не имеющую острых краёв, отпечатанную безопасными водными красками.
+                                    .packaging__part
+                                        p.section__text Помимо прочего мы часто предлагаем заказчикам вклейку прозрачных пластиковых окошек, (чтобы продукция что называется, была «на глазах»), ламинирование, тиснение и склейку. Так же мы занимаемся производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                        p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+                    article.packaging__item(data-index=5)
+                        .packaging__preview
+                            h3.packaging__title Овощи и фрукты
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-5.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Овощи и фрукты
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Яркая картонная упаковка для овощей и фруктов привлечет покупателей и выгодно подчеркнет вашу продукцию на полке супермаркета.
+                                        p.section__text Особенностью такой упаковки является наличие барьерного слоя на картоне, для предотвращения намокания, а так же наличие сертификатов для контакта с пищевым продуктами.
+                                        p.section__text Все это мы можем вам предложить. Помимо прочего мы часто предлагаем заказчикам вклейку прозрачных пластиковых окошек, (чтобы продукция что называется, была «на глазах»), ламинирование, тиснение и склейку.
+                                    .packaging__part
+                                        p.section__text Так же мы занимаемся производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                        p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+                    article.packaging__item(data-index=4)
+                        .packaging__preview
+                            h3.packaging__title Промышленные товары и техника
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-6.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Промышленные товары и техника
+                                p.section__text Лёгкая, прочная, заметная и недорогая упаковка из картона, микрогофрокартона или гофрированного картона защитит ваши товары от повреждений, выдержит штабелирование в несколько рядов и обеспечит презентабельный внешний вид.
+                                p.section__text Яркий дизайн выделит ваш бренд среди конкурентов, для этого мы готовы предложить вам вклейку прозрачных пластиковых окошек, (чтобы продукция что называется, была «на глазах»), ламинирование, тиснение и склейку.
+                                p.section__text Так же наша компания занимается производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=6)
+                        .packaging__preview
+                            h3.packaging__title Автотовары
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-7.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Автотовары
+                                p.section__text Особое место среди выпускаемой нашей компанией продукции занимает упаковка для автотоваров. Экологичная, прочная, яркая и недорогая упаковка из картона защити ваши товары от повреждений и привлечёт внимание покупателей.
+                                p.section__text Мы предлагаем вам готовые решения по универсальной упаковке для большого ассортимента ваших товарных позиций.
+                                p.section__text Так же наша компания мы занимаемся производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=7)
+                        .packaging__preview
+                            h3.packaging__title Обувь
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-8.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Обувь
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Наша компания имеет многолетний опыт в производстве упаковки для обуви, как для элитных марок, так и брендов эконом сегмента.
+                                        p.section__text Коробки типа «крышка-дно» или «шкатулка», выполненные из картона хром-эрзац, или кашированного микрогофрокартона с полноцветной печатью, ламинацией или лакированием, тиснением сложной высечкой сделают вашу продукцию заметной и притягательной для глаза покупателя.
+                                        p.section__text Недорогая и крепкая упаковка защитит пару обуви от повреждений при транспортировке и хранении, выдержит штабелирование в несколько рядов, не потеряв презентабельный внешний вид.
+                                    .packaging__part
+                                        p.section__text Так же наша компания мы занимаемся производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                        p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=8)
+                        .packaging__preview
+                            h3.packaging__title Транспортные паллеты из гофрокартона
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-9.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Транспортные паллеты из гофрокартона
+                                p.section__text Наша компания является одним из основных производителей паллет из гофрокартона для предприятий-поставщиков компании ИКЕА в России.
+                                p.section__text Особенности поддонов из гофрокартона:
+                                    ul.list.list--marked
+                                        li.list__item Не требуют фитосанитарной документации, в отличии от деревянных
+                                        li.list__item Значительно легче, чем деревянные аналоги, удобны для транспортировки и штабелирования
+                                        li.list__item Поддаются 100% переработке
+                                        li.list__item Выдерживают нагрузки аналогичные деревянным паллетам
+                                        li.list__item Обладают демпфирующими свойствами
+                                p.section__text Мы готовы произвести расчет паллета для вас. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=9)
+                        .packaging__preview
+                            h3.packaging__title Предложение сетевым магазинам
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-10.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Предложение сетевым магазинам
+                                p.section__text Наша компания предлагает вам такие популярные товары из гофрокартона, пользующиеся в сетевых магазинах заслуженной популярностью:
+                                ul.list.list--marked
+                                    li.list__item двухслойный гофрокартон в роликах, для застилания полов во время ремонта или укрытия мебели от грязи
+                                    li.list__item картонные коробки для хранения или переезда с логотипом и информацией вашей компании
+                                p.section__text Мы готовы немедленно произвести расчёт вашего заказа,  оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=10)
+                        .packaging__preview
+                            h3.packaging__title Октабины, большие короба
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-11.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Октабины, большие короба
+                                p.section__text В сельском хозяйстве короба типа октабин используют для транспортировки и хранения овощей, фруктов, семян, а так же бухт проводов, кабелей и тросов. Недорогая. Прочная, выдерживающая штабелирование упаковка из пятислойного гофрокартона хорошо себя зарекомендовала за многие годы. Она отлично выдерживает транспортировку  и не теряет презентабельного вида в залах супермаркета.
+                                p.section__text Мы имеем большой опыт и необходимые оснастки для производства крупногабаритной упаковки из толстого пятислойного гофрокартона различных марок, с возможностью нанесения одно- двухцветной печати.
+                                p.section__text Мы готовы немедленно произвести расчёт вашего заказа,  оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=11)
+                        .packaging__preview
+                            h3.packaging__title Упаковка для рыбы, мяса, птицы
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-12.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Упаковка для рыбы, мяса, птицы
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Одними из немногих в России мы освоили технологию производства самосборных коробов крышка-дно из картона хром-эрзац, плотностью до 840 г/м2, с офсетной печатью.
+                                        p.section__text Упаковка, изготовленная из такого плотного картона дает значительные преимущества, в сравнении с аналогами из обычного гофрокартона:
+                                        ul.list.list--marked
+                                            li.list__item имею повышенную жесткость
+                                            li.list__item собирается в одно движение
+                                            li.list__item устойчива к влаге и перепадам температур
+                                            li.list__item занимает в три раза меньше места, при хранении итранспортировке
+                                            li.list__item полноцветная офсетная печать
+                                            li.list__item презентабельный внешний вид
+                                    .packaging__part
+                                        p.section__text Данная упаковка соответствует европейским стандартам качества. Имеет необходимые сертификаты.
+                                        p.section__text Мы можем изготовить данный тип упаковки по вашим размерам, в том числе из картона меньшей плотности.
+
+                    article.packaging__item(data-index=12)
+                        .packaging__preview
+                            h3.packaging__title Упаковка для пиццерий, кофеен, ресторанов
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-13.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Упаковка для пиццерий, кофеен, ресторанов
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Наша компания занимается производством упаковки из картона, микрогофрокартона и гофрированного картона для сетей быстрого питания, кафе, ресторанов, пиццерий, служб доставки еды.
+                                        p.section__text Яркая, индивидуальная упаковка с нанесением полноцветной офсетной печати несомненно выделит ваш бренд среди конкурентов и подчеркнет его первоклассные качества.
+                                        p.section__text Все это мы можем вам предложить. Помимо прочего мы часто предлагаем заказчикам вклейку прозрачных пластиковых окошек, (чтобы продукция что называется, была «на глазах»), ламинирование, тиснение и склейку, создание барьерного слоя, для предотвращения намокания.
+                                    .packaging__part
+                                        p.section__text Так же наша компания мы занимаемся производством транспортной упаковки из бурого и белого гофрокартона с одно – двухцветной печатью, для групповой упаковки.
+                                        p.section__text Мы готовы произвести расчет готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=13)
+                        .packaging__preview
+                            h3.packaging__title Упаковка из гофрокартона
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-14.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc
+                                h4.section__subtitle Упаковка из гофрокартона
+                                .packaging__parts
+                                    .packaging__part
+                                        p.section__text Гофрокартон – это легкий, прочный, практичный, поддающийся 100% переработке материал.
+                                        p.section__text Наша компания занимается производством упаковки из гофрированного картона различных марок уже более 15 лет.
+                                        p.section__text За это время мы накопили большой опыт и создали мощную производственную базу с парком оборудования полного цикла. Будь то обычная четырехклапанная коробка, типовой гофролоток, упаковка для дверей или сложное фасонное изделие, состоящее из нескольких деталей, мы предложим вам отличные цены и сроки исполнения вашего заказа.
+
+                                    .packaging__part
+                                        p.section__text Для производства тары мы используем такие материалы, как микрогофрокартон, трехслойный и пятислойный гофрокартон.
+                                        p.section__text Предоставляем услуги одно- двухцветной флексографской печати.
+                                        p.section__text Мы готовы произвести расчёт готового макета или разработать для вас «с нуля» новый дизайн. Оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=14)
+                        .packaging__preview
+                            h3.packaging__title Двухслойный гофрокартон (Z-картон)
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-15.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Двухслойный гофрокартон (Z-картон)
+                                p.section__text Двухслойный гофрокартон – один из типов гофрированного картона, состоит из одного плоского слоя (лайнер) и одного гофрированного (флютинг).
+                                p.section__text Этот недорогой материал очень практичен и удобен, если вы собрались делать ремонт и необходимо укрыть полы и мебель от грядущих работ или возникла необходимость в упаковке крупногабаритных предметов.
+                                p.section__text Помимо прочего, двухслойный гофрокартон используется при производстве кашированной упаковки, как основание для топ лайнера.
+                                p.section__text Наша компания производит двухслойный гофрокаротн профиля E, B, C, реализует его как в виде рулонов, так и листами (продольно-поперечная резка в формат).
+                                p.section__text Мы готовы немедленно произвести расчёт вашего заказа,  оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+                    article.packaging__item(data-index=15)
+                        .packaging__preview
+                            h3.packaging__title Обечайки, решетки, прокладки
+                        .packaging__body
+                            .packaging__gallery
+                                img.img.img--responsive.packaging__img(src="img/packaging-16.png")
+                                button.packaging__btn.btn.btn--yellow Рассчитать стоимость
+                            .packaging__desc.packaging__desc--small
+                                h4.section__subtitle Обечайки, решетки, прокладки
+                                p.section__text Наша компания занимается производством таких вспомогательных упаковочных материалов из различных типов картона и гофрокартона, как обечайки, прокладки, уплотнительные уголки, решетки для упаковки бутылок.
+                                p.section__text Мы готовы немедленно произвести расчёт вашего заказа,  оставьте заявку в форме обратной связи, и наш специалист свяжется с вами.
+
+
+        section.section.secion--form
+            .container
+                .form
+                    h2.section__title Остались вопросы?
+                    p.form__text Мы с радостью поможем разобраться
+                    .form__wrapper
+                        input.form__input(placeholder="Телефон или e-mail")
+                        button.form__button.btn.btn--yellow Позвоните мне
+
     include includes/footer.pug
 </html>

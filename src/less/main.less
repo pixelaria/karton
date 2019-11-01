@@ -1149,6 +1149,26 @@ body {
     }
   }
 
+  &__desc {
+    &--small {
+      @media @desktop {
+        width: 75%;
+      }
+    }
+  }
+
+  &__parts {
+    @media @desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__part {
+    @media @desktop {
+      width: ~'calc(50% - 15px)';
+    }
+  }
   &__gallery {
     display: flex;
     align-items:center;
