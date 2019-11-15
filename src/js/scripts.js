@@ -82,6 +82,9 @@ $(function (){
         var slide = el.getCurrentSlideCount() - 1;
         $('#slider-consult .consult__part').removeClass('consult__part--active');
         $('#slider-consult .consult__part[data-slide="'+slide+'"]').addClass('consult__part--active')
+
+        $('.consult__image').removeClass('consult__image--active');
+        $('.consult__image[data-slide="'+slide+'"]').addClass('consult__image--active')
       }
     });
     
@@ -202,7 +205,7 @@ $(function (){
       overlay.addClass('popup-overlay--active');
       popup.addClass('popup--active');
     }
-   
+    document.cookie = "karton-cookie-active=1";
   }
 
   $('.popup__btn--cookie').click(function(e){
