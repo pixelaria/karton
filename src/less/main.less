@@ -446,7 +446,10 @@ body {
   }
 
   &--consult {
-    padding: 250px 0px !important;
+    @media @desktop {
+      padding: 250px 0px !important;
+    }
+
     
     /*
     .section__inner {
@@ -1984,16 +1987,6 @@ body {
   }
 }
 
-/*
-.services__list {
-  overflow: scroll;
-}
-.services__list::-webkit-scrollbar { width: 0 !important }
-.services__list { overflow: -moz-scrollbars-none; }
-.services__list { -ms-overflow-style: none; }
-*/
-
-
 .consult {
   @media @desktop {
     &__images {
@@ -2008,9 +2001,11 @@ body {
 
       display: flex;
       align-items: center;
+      list-style: none;
     }
 
     &__image {
+      display: block;
       visibility: hidden;
       position: absolute;
       left: -100%;
@@ -2026,7 +2021,22 @@ body {
   }
 
   &__images {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
+  &__image {
+    display: none;
+    opacity: 0;
+    padding: 30px;
+    padding-left: 0;
+
+    &--active {
+      display: block;
+      opacity: 1;
+    }
   }
 
 }
