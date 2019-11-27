@@ -61,17 +61,73 @@ $(function () {
         });
     }
     if ($("#services").length) {
-        var sliderServices = $("#services .services__list").lightSlider({
+        var sliderServices, sliderServicesTabs;
+        sliderServices = $("#services .services__list").lightSlider({
             item: 6,
             loop: false,
             slideMove: 1,
             speed: 600,
             pager: false,
-            controls: true,
+            controls: false,
+            autoWidth: true,
             responsive: [
                 {breakpoint: 800, settings: {item: 3, slideMove: 1, slideMargin: 6}},
                 {breakpoint: 480, settings: {item: 2, slideMove: 1}},
             ],
+            onAfterSlide: function (el) {sliderServicesTabs.goToSlide($(el).parent().find(".active").index());},
+        });
+        sliderServicesTabs = $("#services .services__tabs").lightSlider({
+            item: 1,
+            slideMove: 1,
+            speed: 600,
+            pager: false,
+            controls: false,
+            slideMargin: 300,
+            enableTouch: false,
+            enableDrag: false,
+        });
+        $(".services__link").click(function (el) {
+            $(".services__link--active").removeClass("services__link--active");
+            $(this).addClass("services__link--active");
+            var index = $(this).parent().index();
+            sliderServicesTabs.goToSlide(index);
+            sliderServices.goToSlide(index);
+        });
+    }
+    if ($("#packaging").length) {
+        var sliderPackaging, sliderPackagingTabs;
+        sliderPackaging = $("#packaging .packaging__list").lightSlider({
+            item: 6,
+            loop: false,
+            slideMove: 1,
+            speed: 600,
+            pager: false,
+            controls: false,
+            autoWidth: true,
+            responsive: [
+                {breakpoint: 800, settings: {item: 3, slideMove: 1, slideMargin: 6}},
+                {breakpoint: 480, settings: {item: 2, slideMove: 1}},
+            ],
+            onAfterSlide: function (el) {sliderPackagingTabs.goToSlide($(el).parent().find(".active").index());},
+        });
+        sliderPackagingTabs = $("#packaging .packaging__tabs").lightSlider({
+            item: 1,
+            slideMove: 1,
+            speed: 600,
+            pager: false,
+            controls: false,
+            slideMargin: 300,
+            enableTouch: false,
+            enableDrag: false,
+        });
+        $("#packaging .packaging__inner .slides")
+            .lightSlider({item: 1, slideMove: 1, speed: 600, pager: false, controls: true, slideMargin: 0});
+        $(".packaging__link").click(function (el) {
+            $(".packaging__link--active").removeClass("packaging__link--active");
+            $(this).addClass("packaging__link--active");
+            var index = $(this).parent().index();
+            sliderPackagingTabs.goToSlide(index);
+            sliderPackaging.goToSlide(index);
         });
     }
     $("[data-popup]").click(function (e) {
@@ -154,8 +210,10 @@ $(function () {
                 data: form.serialize(),
                 dataType: "json",
                 success: function (json) {
+                    console.log("success");
                     window.setTimeout(function () {
-                        form.find(".contacts-form__title").html("Спасибо за обращение! Мы ответим ближайшее время.");
+                        form.find(".contacts-form__title").html("Спасибо за обращение! Мы ответим в ближайшее время.");
+                        form.find(".form__text").html("Спасибо за обращение! Мы ответим в ближайшее время.");
                     }, 1000);
                     window.setTimeout(function () {
                         $(".error").remove();
@@ -173,68 +231,18 @@ $(function () {
     });
 
     function validateForm(form) {
+        console.log("validateForm");
         var result = true;
         form.find(".contacts-form__group").removeClass("has-error");
         form.find(".error").remove();
+        console.log("getContacts");
         var contacts = form.find("input[name=\"contacts\"]");
         if (!contacts.val()) {
             contacts.parent().addClass("has-error");
             contacts.parent().append("<p class=\"error\">Введите ваш контакт</p>");
             result = false;
         }
+        console.log("validated", result);
         return result;
     }
 });
-(function () {
-    const tabbed = document.querySelector(".services");
-    if (tabbed) {
-        const tablist = tabbed.querySelector("ul");
-        const tabs = tablist.querySelectorAll("a");
-        const panels = tabbed.querySelectorAll("[id^=\"section\"]");
-        const switchTab = (oldTab, newTab) => {
-            newTab.focus();
-            newTab.removeAttribute("tabindex");
-            newTab.setAttribute("aria-selected", "true");
-            oldTab.removeAttribute("aria-selected");
-            oldTab.setAttribute("tabindex", "-1");
-            let index = Array.prototype.indexOf.call(tabs, newTab);
-            let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
-            panels[oldIndex].hidden = true;
-            panels[index].hidden = false;
-        };
-        tablist.setAttribute("role", "tablist");
-        Array.prototype.forEach.call(tabs, (tab, i) => {
-            tab.setAttribute("role", "tab");
-            tab.setAttribute("id", "tab" + (i + 1));
-            tab.setAttribute("tabindex", "-1");
-            tab.parentNode.setAttribute("role", "presentation");
-            tab.addEventListener("click", e => {
-                e.preventDefault();
-                let currentTab = tablist.querySelector("[aria-selected]");
-                currentTab.classList.remove("services__link--active");
-                if (e.currentTarget !== currentTab) {
-                    switchTab(currentTab, e.currentTarget);
-                    e.currentTarget.classList.add("services__link--active");
-                }
-            });
-            tab.addEventListener("keydown", e => {
-                let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
-                let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? "down" : null;
-                if (dir !== null) {
-                    e.preventDefault();
-                    dir === "down" ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
-                }
-            });
-        });
-        Array.prototype.forEach.call(panels, (panel, i) => {
-            panel.setAttribute("role", "tabpanel");
-            panel.setAttribute("tabindex", "-1");
-            let id = panel.getAttribute("id");
-            panel.setAttribute("aria-labelledby", tabs[i].id);
-            panel.hidden = true;
-        });
-        tabs[0].removeAttribute("tabindex");
-        tabs[0].setAttribute("aria-selected", "true");
-        panels[0].hidden = false;
-    }
-})();
