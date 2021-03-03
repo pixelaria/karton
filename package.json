@@ -36,6 +36,6 @@
     "gulp-svgstore": "^6.1.1",
     "gulp-zip": "^4.0.0",
     "imagemin-pngquant": "^5.0.1",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   }
 }
